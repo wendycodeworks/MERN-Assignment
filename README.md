@@ -24,7 +24,11 @@ Professionals and aspiring professionals from the tech industry
 
 ### R1.4 Tech Stack
 
+Frontend
 React
+Bulma Framework
+
+Backend
 Node.js
 Express
 AWS S3
