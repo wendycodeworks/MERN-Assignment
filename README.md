@@ -86,3 +86,10 @@ As an administrator, I want to be able to manage meetup listings.
 ## R5 - Wireframes
 
 ## R6 - Planning
+
+### Kick-off
+After receiving the go-ahead, we started mapping out day one. The first activity was to set up the GitHub repository and choose the project management tool. We settled on one repository for both the frontend and the backend of the application, and decided to make use of the projects feature available on GitHub. The documentation requirements were then broken down into cards with sub-tasks listed beneath. The tasks are ranked by complexity, priority and if there were any dependencies. 
+
+### Project management methodology
+
+
