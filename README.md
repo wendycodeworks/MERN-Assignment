@@ -54,7 +54,19 @@ Professionals and aspiring professionals from the tech industry
 
 ## R4 - User Stories
 
+![user-harold-winger](.\assets\user-harold.jpg)
 
+<details>
+<summary>Harold - User Stories</summary>
+
++ As a user, I want to be able to register a new account.
+    + As a registered user, I want to be able to list my interests on my profile.
+
+</details>
+
+![user-cynthia](.\assets\user-cynthia.jpg)
+
+![user-nathaniel](.\assets\user-nathaniel.jpg)
 
 As a user, I want to be able to register a new account.
 
