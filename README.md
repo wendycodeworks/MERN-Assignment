@@ -57,47 +57,62 @@ Professionals and aspiring professionals from the tech industry
 ![user-harold](./assets/user-harold.jpg)
 
 <details>
-<summary>Harold - User Stories</summary>
+<summary> More on Harold the Intern </summary>
 
-+ As a user, I want to be able to register a new account.
-    + As a registered user, I want to be able to list my interests on my profile.
 
 </details>
 
 ![user-cynthia](./assets/user-cynthia.jpg)
 
+<details>
+<summary> More on Cynthia the Software developer </summary>
+
+
+</details>
+
 ![user-nathaniel](./assets/user-nathaniel.jpg)
 
-As a user, I want to be able to register a new account.
-
-As a registered user, I want to be able to login to my existing account.
-
-As a registered user, I want to be able to add my contact information on my profile.
-
-As a registered user, I want to be able to list my interests on my profile.
-
-As a registered user, I want to be able to list my hobbies on my profile.
-
-As a registered user, I want to be able to list my professional skills on my profile.
-
-As a registered user, I want to display my attended meetups on my profile.
-
-As a registered user, I want to be able to browse the website on different devices.
-
-As a registered user, I want to be able to create a new meetup.
-
-As a registered user, I want to be able to update an existing meetup that I created.
-
-As a registered user, I want to be able to cancel an existing meetup that I created.
-
-As a registered user, I want to get notified on cancelled meetups.
-
-As a registered user, I want to be able to mark if I am attending the meetup or not (Going, Maybe, Not Going).
+<details>
+<summary> More on Nathaniel the CTO </summary>
 
 
-As an administrator, I want to be able to manage registered users.
+</details>
 
-As an administrator, I want to be able to manage meetup listings.
+From analysis of the user stories from the three personas, we developed the following user stories:
+
+<details>
+<summary> Users </summary>
+
++ As a user, I want to be able to register a new account.
+
+</details>
+
+<details>
+<summary> Registered User </summary>
+
++ As a registered user, I want to be able to login to my existing account.
++ As a registered user, I want to be able to add my contact information on my profile.
++ As a registered user, I want to be able to list my interests on my profile.
++ As a registered user, I want to be able to list my hobbies on my profile.
++ As a registered user, I want to be able to list my professional skills on my profile.
++ As a registered user, I want to display my attended meetups on my profile.
++ As a registered user, I want to be able to browse the website on different devices.
++ As a registered user, I want to be able to create a new meetup.
++ As a registered user, I want to be able to update an existing meetup that I created.
++ As a registered user, I want to be able to cancel an existing meetup that I created.
++ As a registered user, I want to get notified on cancelled meetups.
++ As a registered user, I want to be able to mark if I am attending the meetup or not (Going, Maybe, Not Going).
+
+</details>
+
+<details>
+<summary> Admin </summary>
+
+
++ As an administrator, I want to be able to manage registered users.
++ As an administrator, I want to be able to manage meetup listings.
+
+</details>
 
 ## R5 - Wireframes
 
