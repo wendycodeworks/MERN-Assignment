@@ -7,19 +7,19 @@ Created by Wendy and Morgan
 
 ### R1.1 - Purpose
 
-This application is dedicated to  professionals in the technology industry and designed to help them connect through meetups, workshops, conferences and other live events. 
+This application is dedicated to  professionals in the technology industry and designed to help them connect through meetups, workshops, conferences and other live events.
 
 ### R1.2 - Functionality/Features
 
-Users
+Users: Registered users can create and discover events, send out invitations to other users, share their personal skills and interests as well as build a social reputation by keeping track of all their attended events. Users can get notified of upcoming events that they may be interested in based off their personal interests.
 
-Events
+Events: Users are free to create events and invite like-minded people to attend. Event creators will be able to see how many people are interested in their event, and be able to get a idea of the people who are intending on attending the event.
 
 Registration/RSVP
 
 Guest List
 
-Search
+Search: You can search for upcoming events that interest you, as well as discover other users and what they may have in common with you.
 
 ### R1.3 - Target Audience
 Professionals and aspiring professionals from the tech industry
