@@ -78,39 +78,40 @@ Professionals and aspiring professionals from the tech industry
 
 </details>
 
-From analysis of the user stories from the three personas, we developed the following user stories:
+#### From analysis of the three personas, we developed the following user stories:
 
-<details>
-<summary> Users </summary>
+<details open>
+<summary> User </summary>
 
-+ As a user, I want to be able to register a new account.
++ I want to be able to register a new account.
++ I want to browse events that might interest me.
++ I want to search for events that might be relevant to me.
 
 </details>
 
-<details>
+<details open>
 <summary> Registered User </summary>
 
-+ As a registered user, I want to be able to login to my existing account.
-+ As a registered user, I want to be able to add my contact information on my profile.
-+ As a registered user, I want to be able to list my interests on my profile.
-+ As a registered user, I want to be able to list my hobbies on my profile.
-+ As a registered user, I want to be able to list my professional skills on my profile.
-+ As a registered user, I want to display my attended meetups on my profile.
-+ As a registered user, I want to be able to browse the website on different devices.
-+ As a registered user, I want to be able to create a new meetup.
-+ As a registered user, I want to be able to update an existing meetup that I created.
-+ As a registered user, I want to be able to cancel an existing meetup that I created.
-+ As a registered user, I want to get notified on cancelled meetups.
-+ As a registered user, I want to be able to mark if I am attending the meetup or not (Going, Maybe, Not Going).
++ I want to be able to login to my existing account.
++ I want to be able to add my contact information on my profile.
++ I want to be able to list my interests on my profile.
++ I want to be able to list my hobbies on my profile.
++ I want to be able to list my professional skills on my profile.
++ I want to display my attended meetups on my profile.
++ I want to be able to browse the website on different devices.
++ I want to be able to create a new meetup.
++ I want to be able to update an existing meetup that I created.
++ I want to be able to cancel an existing meetup that I created.
++ I want to get notified on cancelled meetups.
++ I want to be able to mark if I am attending the meetup or not (Going, Maybe, Not Going).
 
 </details>
 
-<details>
+<details open>
 <summary> Admin </summary>
 
-
-+ As an administrator, I want to be able to manage registered users.
-+ As an administrator, I want to be able to manage meetup listings.
++ I want to be able to manage registered users.
++ I want to be able to manage meetup listings.
 
 </details>
 
@@ -119,7 +120,10 @@ From analysis of the user stories from the three personas, we developed the foll
 ## R6 - Planning
 
 ### Kick-off
-After receiving the go-ahead, we started mapping out day one. We started by setting up the GitHub repository and choosing the project management tool. We ended up with one repository for both the frontend and the backend of the application and for the project management tool will be using the projects feature available on GitHub. 
+After receiving the go-ahead, we started mapping out day one. We prioritised the GitHub repository setup and choosing the project management tool. We ended up with one repository for both the frontend and the backend of the application and for the project management tool will be using the projects feature available on GitHub. 
 
 ### Project management methodology
-We elected to use a hybrid Kanban and Agile approach to this project. The tasks are ranked by complexity, priority and if there were any dependencies. 
+We elected to use a hybrid Kanban and Agile approach on this project. The tasks are ranked by complexity, priority and if there were any dependencies. 
+
+### Delegation
+
