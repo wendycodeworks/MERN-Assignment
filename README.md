@@ -1,6 +1,8 @@
 # T3A2 - MERN Application
 Created by Wendy and Morgan
 
+[TOC]
+
 ## R1 - Description
 
 ### R1.1 - Purpose
@@ -52,6 +54,8 @@ Professionals and aspiring professionals from the tech industry
 
 ## R4 - User Stories
 
+
+
 As a user, I want to be able to register a new account.
 
 As a registered user, I want to be able to login to my existing account.
@@ -88,8 +92,7 @@ As an administrator, I want to be able to manage meetup listings.
 ## R6 - Planning
 
 ### Kick-off
-After receiving the go-ahead, we started mapping out day one. The first activity was to set up the GitHub repository and choose the project management tool. We settled on one repository for both the frontend and the backend of the application, and decided to make use of the projects feature available on GitHub. The documentation requirements were then broken down into cards with sub-tasks listed beneath. The tasks are ranked by complexity, priority and if there were any dependencies. 
+After receiving the go-ahead, we started mapping out day one. We started by setting up the GitHub repository and choosing the project management tool. We ended up with one repository for both the frontend and the backend of the application and for the project management tool will be using the projects feature available on GitHub. 
 
 ### Project management methodology
-
-
+We elected to use a hybrid Kanban and Agile approach to this project. The tasks are ranked by complexity, priority and if there were any dependencies. 
