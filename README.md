@@ -52,6 +52,8 @@ Professionals and aspiring professionals from the tech industry
 
 ## R3 - Architecture Diagram
 
+![arch-diagram](./assets/arch-diagram.jpg)
+
 ## R4 - User Stories
 
 ![user-harold](./assets/user-harold.jpg)
