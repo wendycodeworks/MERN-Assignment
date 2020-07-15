@@ -15,9 +15,7 @@ Users: Registered users can create and discover events, send out invitations to 
 
 Events: Users are free to create events and invite like-minded people to attend. Event creators will be able to see how many people are interested in their event, and be able to get a idea of the people who are intending on attending the event.
 
-Registration/RSVP
-
-Attendees List
+Attendees List: Users can mark whether or not they're attending the event. This gives event creators an idea of how many people are going to attend their event and also allows for users to be notified if an event has been postponed or cancelled. 
 
 Search: You can search for upcoming events that interest you, as well as discover other users and what they may have in common with you.
 
