@@ -127,9 +127,9 @@ Professionals and aspiring professionals from the tech industry
 After receiving the go-ahead, we started mapping out day one. We prioritised the GitHub repository setup and choosing the project management tool. We ended up with one repository for both the frontend and the backend of the application and for the project management tool will be using the projects feature available on GitHub. 
 
 ### Project management methodology
-We elected to use a hybrid Kanban and Agile approach on this project. The tasks are ranked by complexity, priority and if there were any dependencies. 
+On this project, we elected to use an Agile hybrid Kanban and Scrum approach. 
 
 ### Delegation
-We gravitated to very loose approach to delegation; as a team of two, we decided which task to accept and confirmed with eachother. Each task had an 'owner'; reminiscent of the product owner role in a sprint. The task owner is also the 'development team' (it's just one of us), creating the first draft or iteration. Draft or iteration is reviewed by  prior to addition to the master.
+We gravitated to very loose approach to delegation; as a team of two, we decided which task to accept and confirmed with eachother. The tasks are ranked by complexity, priority and if there were any dependencies. Each task had an 'owner'; reminiscent of the product owner role in a sprint. The task owner is also the 'development team' (it's just one of us), creating the first draft or iteration. The draft or iteration is reviewed by  prior to addition to the master.
 
 ### Project progression
