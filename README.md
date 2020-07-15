@@ -17,7 +17,7 @@ Events: Users are free to create events and invite like-minded people to attend.
 
 Registration/RSVP
 
-Guest List
+Attendees List
 
 Search: You can search for upcoming events that interest you, as well as discover other users and what they may have in common with you.
 
@@ -117,6 +117,10 @@ Professionals and aspiring professionals from the tech industry
 
 ## R5 - Wireframes
 
+### Desktop
+
+### Mobile
+
 ## R6 - Planning
 
 ### Kick-off
@@ -126,4 +130,6 @@ After receiving the go-ahead, we started mapping out day one. We prioritised the
 We elected to use a hybrid Kanban and Agile approach on this project. The tasks are ranked by complexity, priority and if there were any dependencies. 
 
 ### Delegation
+We gravitated to very loose approach to delegation; as a team of two, we decided which task to accept and confirmed with eachother. Each task had an 'owner'; reminiscent of the product owner role in a sprint. The task owner is also the 'development team' (it's just one of us), creating the first draft or iteration. Draft or iteration is reviewed by  prior to addition to the master.
 
+### Project progression
