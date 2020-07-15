@@ -15,7 +15,9 @@ Users: Registered users can create and discover events, send out invitations to 
 
 Events: Users are free to create events and invite like-minded people to attend. Event creators will be able to see how many people are interested in their event, and be able to get a idea of the people who are intending on attending the event.
 
-Attendees List: Users can mark whether or not they're attending the event. This gives event creators an idea of how many people are going to attend their event and also allows for users to be notified if an event has been postponed or cancelled. 
+Registration/RSVP
+
+Attendees List
 
 Search: You can search for upcoming events that interest you, as well as discover other users and what they may have in common with you.
 
@@ -49,8 +51,6 @@ Professionals and aspiring professionals from the tech industry
 ## R2 - Dataflow Diagram
 
 ## R3 - Architecture Diagram
-
-![arch-diagram](./assets/arch-diagram.png)
 
 ## R4 - User Stories
 
@@ -127,7 +127,7 @@ Professionals and aspiring professionals from the tech industry
 After receiving the go-ahead, we started mapping out day one. We prioritised the GitHub repository setup and choosing the project management tool. We ended up with one repository for both the frontend and the backend of the application and for the project management tool will be using the projects feature available on GitHub. 
 
 ### Project management methodology
-On this project, we elected to use an Agile hybrid Kanban and Scrum approach. 
+On this project, we elected to use an Agile hybrid Kanban and Scrum approach. From Scrum, we borrowed daily sprint standups, sprint planning, and the sprint roles (discussed below). And from Kanban, we apply the practice of a visualised workflow, breaking down the project requirements into cards with subtasks. Being relatively flexible with the method prescription is another hallmark of Kanban. We work within a such structure that encourages self-organisation, independence; we integrate collaboration and consultation  where essential.
 
 ### Delegation
 We gravitated to very loose approach to delegation; as a team of two, we decided which task to accept and confirmed with eachother. The tasks are ranked by complexity, priority and if there were any dependencies. Each task had an 'owner'; reminiscent of the product owner role in a sprint. The task owner is also the 'development team' (it's just one of us), creating the first draft or iteration. The draft or iteration is reviewed by  prior to addition to the master.
