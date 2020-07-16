@@ -139,11 +139,26 @@ Nathaniel was completing his CS degree as he co-founded his first startup - a lo
 
 ## R5 - Wireframes
 
-### Desktop
+<details open>
+<summary> Desktop </summary>
 
-### Mobile
+![desktop-wireframes](./assets/wireframes/Desktop.png)
 
-### Tablet
+</details>
+
+<details open>
+<summary> Mobile </summary>
+
+![mobile-wireframes](./assets/wireframes/Mobile.png)
+
+</details>
+
+<details open>
+<summary> Tablet </summary>
+
+![tablet-wireframes](./assets/wireframes/Tablet.png)
+
+</details>
 
 ## R6 - Planning
 
