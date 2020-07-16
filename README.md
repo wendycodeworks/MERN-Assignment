@@ -108,6 +108,7 @@ Nathaniel was completing his CS degree as he co-founded his first startup - a lo
 + I want to be able to list my hobbies on my profile.
 + I want to be able to list my professional skills on my profile.
 + I want to be able to browse the website on different devices.
++ I want to make changes to my account details and credentials.
 
     Attendee
     + I want to be able to mark if I am attending the meetup.
@@ -115,6 +116,7 @@ Nathaniel was completing his CS degree as he co-founded his first startup - a lo
     + I want to display my attended meetups on my profile. meetup or not (Going, Maybe, Not Going).
     + I want change my attendence to a meetup.
     + I want to favourite or save an event for later.
+    + I want to view and repond to all my invitations.
 
     Organiser
     + I want to be able to create a new meetup.
@@ -123,7 +125,7 @@ Nathaniel was completing his CS degree as he co-founded his first startup - a lo
     + I want to review the guest list to my event.
     + I want to set the privacy status of my event.
     + I want to send invitations to my event.
-    + I want to see a list of all my events 
+    + I want to see a list of all my events. 
 
 </details>
 
