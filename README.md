@@ -54,6 +54,12 @@ Professionals and aspiring professionals from the tech industry
 
 - Heroku: Cloud hosting platform.
 
+#### DevOps
+
+- Github Project: Kanban board and project management tool.
+
+- Balsamiq: wireframing software. 
+
 ## R2 - Dataflow Diagram
 
 ![DFD](./assets/data-flow-diagram.png)
