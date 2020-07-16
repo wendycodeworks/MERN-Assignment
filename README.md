@@ -66,8 +66,7 @@ Professionals and aspiring professionals from the tech industry
 
 <details>
 <summary> More on Harold the Intern </summary>
-
-
+Harold is a recent graduate from a bootcamp course. In the last 6 months he had been diligently developing is coding skills but in doing so he had somewhat neglected career building activities. He has a network of peers but very few professional connections in the local tech community. Harold has a couple items on his portfolio but does not feel confident sending it to employers as of yet. He's concerned about his job prospects as well as leaving a highly supportive network. Harold has also heard that having a mentor that can vouch for you can dramatically influence your career. 
 </details>
 
 ![user-cynthia](./assets/user-cynthia.jpg)
@@ -89,7 +88,7 @@ Professionals and aspiring professionals from the tech industry
 #### From analysis of the three personas, we developed the following user stories:
 
 <details open>
-<summary> User </summary>
+<summary> Visitor </summary>
 
 + I want to be able to register a new account.
 + I want to browse events that might interest me.
@@ -105,13 +104,23 @@ Professionals and aspiring professionals from the tech industry
 + I want to be able to list my interests on my profile.
 + I want to be able to list my hobbies on my profile.
 + I want to be able to list my professional skills on my profile.
-+ I want to display my attended meetups on my profile.
 + I want to be able to browse the website on different devices.
-+ I want to be able to create a new meetup.
-+ I want to be able to update an existing meetup that I created.
-+ I want to be able to cancel an existing meetup that I created.
-+ I want to get notified on cancelled meetups.
-+ I want to be able to mark if I am attending the meetup or not (Going, Maybe, Not Going).
+
++ Attendee
+    + I want to be able to mark if I am attending the meetup.
+    + I want to get notified on cancelled meetups.
+    + I want to display my attended meetups on my profile. meetup or not (Going, Maybe, Not Going).
+    + I want change my attendence to a meetup.
+    + I want to favourite or save an event for later.
+
++ Organiser
+    + I want to be able to create a new meetup.
+    + I want to be able to update an existing meetup that I created.
+    + I want to be able to cancel an existing meetup that I created.
+    + I want to review the guest list to my event.
+    + I want to set the privacy status of my event.
+    + I want to send invitations to my event.
+    + I want to see a list of all my events 
 
 </details>
 
@@ -119,7 +128,7 @@ Professionals and aspiring professionals from the tech industry
 <summary> Admin </summary>
 
 + I want to be able to manage registered users.
-+ I want to be able to manage meetup listings.
++ I want to be able to manage and moderate meetup listings.
 
 </details>
 
