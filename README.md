@@ -190,13 +190,6 @@ We gravitated to very loose approach to delegation; as a team of two, we decided
 </details>
 
 <details open>
-<summary> Day 2</summary>
-
-![day-2](./assets/project-progression/day-2-start.png)
-
-</details>
-
-<details open>
 <summary> Day 3</summary>
 
 ![day-3](./assets/project-progression/day-3-start.png)
