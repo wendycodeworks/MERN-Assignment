@@ -56,8 +56,6 @@ Professionals and aspiring professionals from the tech industry
 
 ## R2 - Dataflow Diagram
 
-![data-flow-diagram](./assets/data-flow-diagram.png)
-
 ## R3 - Architecture Diagram
 
 ![arch-diagram](./assets/arch-diagram.png)
@@ -174,3 +172,45 @@ On this project, we elected to use an Agile hybrid Kanban and Scrum approach. Fr
 We gravitated to very loose approach to delegation; as a team of two, we decided which task to accept and confirmed with eachother. The tasks are ranked by complexity, priority and if there were any dependencies. Each task had an 'owner'; reminiscent of the product owner role in a sprint. The task owner is also the 'development team' (it's just one of us), creating the first draft or iteration. The draft or iteration is reviewed by  prior to addition to the master.
 
 ### Project progression
+
+<details open>
+<summary> Day 1</summary>
+
+![day-1](./assets/project-progression/day-1-start.png)
+
+</details>
+
+<details open>
+<summary> Day 2</summary>
+
+![day-2](./assets/project-progression/day-2-start.png)
+
+</details>
+
+<details open>
+<summary> Day 2</summary>
+
+![day-2](./assets/project-progression/day-2-start.png)
+
+</details>
+
+<details open>
+<summary> Day 3</summary>
+
+![day-3](./assets/project-progression/day-3-start.png)
+
+</details>
+
+<details open>
+<summary> Day 4</summary>
+
+![day-4](./assets/project-progression/day-4-start.png)
+
+</details>
+
+<details open>
+<summary> Day 5</summary>
+
+![day-5](./assets/project-progression/day-5-start.png)
+
+</details>
