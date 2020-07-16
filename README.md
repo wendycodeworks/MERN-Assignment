@@ -7,18 +7,26 @@ Created by Wendy and Morgan
 
 ### R1.1 - Purpose
 
-This application is dedicated to  professionals in the technology industry and designed to help them connect through meetups, workshops, conferences and other live events.
+Existing event applications are highly saturated with an enormous variety of events. From hobby groups, to social meetups, all compete for space and attention on popular event platforms. In light of this, we see an opportunity to create an exclusive platform for professional development events catered to the local tech community.  
+
+This application is dedicated to connecting professionals in the technology industry and designed to help them come together through meetups, workshops, conferences and other live events. 
 
 ### R1.2 - Functionality/Features
 
-Users: Registered users can create and discover events, send out invitations to other users, share their personal skills and interests as well as build a social reputation by keeping track of all their attended events. Users can get notified of upcoming events that they may be interested in based off their personal interests.                                                                                                                                                          
-Events: Users are free to create events and invite like-minded people to attend. Event creators will be able to see how many people are interested in their event, and be able to get a idea of the people who are intending on attending the event.
-                       
-Attendees List: Users can mark whether or not they're attending the event. This gives event creators an idea of how many people are going to attend their event 
-and also allows for users to be notified if an event has been postponed or cancelled.                           
+Users: registered users receive a personal profile and the ability to RSVP to events. 
 
-Search: You can search for upcoming events that interest you, as well as discover other users and what they may have in common with you.
+Events: Organisers are free to create events and invite people to attend.  
 
+Registration/RSVP: Users can register their intent to attend any public event or any private event for which they have an invitation. 
+
+Attendees List: Event organisers can view a guestlist of people that have registered to attend their event.
+
+Invites: Organisers are able to send invitations to both private and public events. 
+
+Search: Users can search for upcoming events of interest, other users and organisers. 
+
+Favourites: While browsing events, users have the ability to mark an event that they may interest in without having to commit to an RSVP. 
+ 
 ### R1.3 - Target Audience
 Professionals and aspiring professionals from the tech industry
 
@@ -120,6 +128,8 @@ Professionals and aspiring professionals from the tech industry
 ### Desktop
 
 ### Mobile
+
+### Tablet
 
 ## R6 - Planning
 
