@@ -89,7 +89,7 @@ Professionals and aspiring professionals from the tech industry
 #### From analysis of the three personas, we developed the following user stories:
 
 <details open>
-<summary> User </summary>
+<summary> Visitor </summary>
 
 + I want to be able to register a new account.
 + I want to browse events that might interest me.
@@ -105,13 +105,22 @@ Professionals and aspiring professionals from the tech industry
 + I want to be able to list my interests on my profile.
 + I want to be able to list my hobbies on my profile.
 + I want to be able to list my professional skills on my profile.
-+ I want to display my attended meetups on my profile.
 + I want to be able to browse the website on different devices.
-+ I want to be able to create a new meetup.
-+ I want to be able to update an existing meetup that I created.
-+ I want to be able to cancel an existing meetup that I created.
-+ I want to get notified on cancelled meetups.
-+ I want to be able to mark if I am attending the meetup or not (Going, Maybe, Not Going).
+
++ Attendee
+    + I want to get notified on cancelled meetups.
+    + I want to be able to mark if I am attending the
+    + I want to display my attended meetups on my profile. meetup or not (Going, Maybe, Not Going).
+    + I want change my attendence to a meetup.
+    + I want to favourite or save an event for later.
+
++ Organiser
+    + I want to be able to create a new meetup.
+    + I want to be able to update an existing meetup that I created.
+    + I want to be able to cancel an existing meetup that I created.
+    + I want to review the guest list to my event.
+    + I want to set the privacy status of my event.
+    + I want to send invites to my event.
 
 </details>
 
