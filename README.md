@@ -1,8 +1,6 @@
 # T3A2 - MERN Application
 Created by Wendy and Morgan
 
-[TOC]
-
 ## R1 - Description
 
 ### R1.1 - Purpose
@@ -62,15 +60,15 @@ Professionals and aspiring professionals from the tech industry
 
 ## R2 - Dataflow Diagram
 
-![DFD](./assets/data-flow-diagram.png)
+![DFD](./docs/data-flow-diagram.png)
 
 ## R3 - Architecture Diagram
 
-![arch-diagram](./assets/arch-diagram.png)
+![arch-diagram](./docs/arch-diagram.png)
 
 ## R4 - User Stories
 
-![user-harold](./assets/user-harold.jpg)
+![user-harold](./docs/user-harold.jpg)
 
 <details>
 <summary> More on Harold the Intern </summary>
@@ -79,7 +77,7 @@ Harold is a recent graduate from a bootcamp course. In the last 6 months he had 
 
 </details>
 
-![user-cynthia](./assets/user-cynthia.jpg)
+![user-cynthia](./docs/user-cynthia.jpg)
 
 <details>
 <summary> More on Cynthia the Software developer </summary>
@@ -88,7 +86,7 @@ After completing her CS degree 9 years ago, Cynthia has worked in software devel
 
 </details>
 
-![user-nathaniel](./assets/user-nathaniel.jpg)
+![user-nathaniel](./docs/user-nathaniel.jpg)
 
 <details>
 <summary> More on Nathaniel the CTO </summary>
@@ -150,21 +148,21 @@ Nathaniel was completing his CS degree as he co-founded his first startup - a lo
 <details open>
 <summary> Desktop </summary>
 
-![desktop-wireframes](./assets/wireframes/Desktop.png)
+![desktop-wireframes](./docs/wireframes/Desktop.png)
 
 </details>
 
 <details open>
 <summary> Mobile </summary>
 
-![mobile-wireframes](./assets/wireframes/Mobile.png)
+![mobile-wireframes](./docs/wireframes/Mobile.png)
 
 </details>
 
 <details open>
 <summary> Tablet </summary>
 
-![tablet-wireframes](./assets/wireframes/Tablet.png)
+![tablet-wireframes](./docs/wireframes/Tablet.png)
 
 </details>
 
@@ -184,34 +182,34 @@ We gravitated to very loose approach to delegation; as a team of two, we decided
 <details open>
 <summary> Day 1</summary>
 
-![day-1](./assets/project-progression/day-1-start.png)
+![day-1](./docs/project-progression/day-1-start.png)
 
 </details>
 
 <details open>
 <summary> Day 2</summary>
 
-![day-2](./assets/project-progression/day-2-start.png)
+![day-2](./docs/project-progression/day-2-start.png)
 
 </details>
 
 <details open>
 <summary> Day 3</summary>
 
-![day-3](./assets/project-progression/day-3-start.png)
+![day-3](./docs/project-progression/day-3-start.png)
 
 </details>
 
 <details open>
 <summary> Day 4</summary>
 
-![day-4](./assets/project-progression/day-4-start.png)
+![day-4](./docs/project-progression/day-4-start.png)
 
 </details>
 
 <details open>
 <summary> Day 5</summary>
 
-![day-5](./assets/project-progression/day-5-start.png)
+![day-5](./docs/project-progression/day-5-start.png)
 
 </details>
