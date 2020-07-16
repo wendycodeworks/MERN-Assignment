@@ -56,6 +56,8 @@ Professionals and aspiring professionals from the tech industry
 
 ## R2 - Dataflow Diagram
 
+![data-flow-diagram](./assets/data-flow-diagram.png)
+
 ## R3 - Architecture Diagram
 
 ![arch-diagram](./assets/arch-diagram.png)
