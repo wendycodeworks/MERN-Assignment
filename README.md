@@ -66,7 +66,9 @@ Professionals and aspiring professionals from the tech industry
 
 <details>
 <summary> More on Harold the Intern </summary>
-Harold is a recent graduate from a bootcamp course. In the last 6 months he had been diligently developing is coding skills but in doing so he had somewhat neglected career building activities. He has a network of peers but very few professional connections in the local tech community. Harold has a couple items on his portfolio but does not feel confident sending it to employers as of yet. He's concerned about his job prospects as well as leaving a highly supportive network. Harold has also heard that having a mentor that can vouch for you can dramatically influence your career. 
+
+Harold is a recent graduate from a bootcamp course. In the last 6 months he had been diligently developing is coding skills but in doing so he had somewhat neglected career building activities. He has a network of peers but very few professional connections in the local tech community. Harold has a couple items on his portfolio but does not feel confident sending it to employers as of yet. He's concerned about his job prospects as well as leaving a highly supportive network. He's developed an affinity for Javascript and would like to become more proficient in React. Harold has also heard that having a mentor that can vouch for you can dramatically influence your career. 
+
 </details>
 
 ![user-cynthia](./assets/user-cynthia.jpg)
@@ -74,6 +76,7 @@ Harold is a recent graduate from a bootcamp course. In the last 6 months he had 
 <details>
 <summary> More on Cynthia the Software developer </summary>
 
+After completing her CS degree 9 years ago, Cynthia has worked in software development and is now looking for her vertical move. She's been keeping up to date with the latest frameworks and languages and becoming much more active online, trying to establish herself as an expert on NoSQL databases, such as a MongoDB. Presently, her professional network consists of mostly data analysts and data professionals - she would like to change that. Cynthia wants to engage with the growing tech community in her local area and participate in discussions. 
 
 </details>
 
@@ -81,7 +84,7 @@ Harold is a recent graduate from a bootcamp course. In the last 6 months he had 
 
 <details>
 <summary> More on Nathaniel the CTO </summary>
-
+Nathaniel was completing his CS degree as he co-founded his first startup - a logistics platform. He is now the CTO of Starlink and has been in the industry for 17 years. He's looking give back, and to cultivate the local eco-system and the next generation of tech professionals. He's well established as a thought leader but believes in the value of face to face interactions. Nathaniel is also on the look out for up and coming talent to recruit; he understands that good talent is hard to come by and a very rare commodity.  
 
 </details>
 
@@ -105,22 +108,24 @@ Harold is a recent graduate from a bootcamp course. In the last 6 months he had 
 + I want to be able to list my hobbies on my profile.
 + I want to be able to list my professional skills on my profile.
 + I want to be able to browse the website on different devices.
++ I want to make changes to my account details and credentials.
 
-+ Attendee
+    Attendee
     + I want to be able to mark if I am attending the meetup.
     + I want to get notified on cancelled meetups.
     + I want to display my attended meetups on my profile. meetup or not (Going, Maybe, Not Going).
     + I want change my attendence to a meetup.
     + I want to favourite or save an event for later.
+    + I want to view and repond to all my invitations.
 
-+ Organiser
+    Organiser
     + I want to be able to create a new meetup.
     + I want to be able to update an existing meetup that I created.
     + I want to be able to cancel an existing meetup that I created.
     + I want to review the guest list to my event.
     + I want to set the privacy status of my event.
     + I want to send invitations to my event.
-    + I want to see a list of all my events 
+    + I want to see a list of all my events. 
 
 </details>
 
