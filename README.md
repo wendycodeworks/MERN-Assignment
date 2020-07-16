@@ -7,7 +7,9 @@ Created by Wendy and Morgan
 
 ### R1.1 - Purpose
 
-This application is dedicated to  professionals in the technology industry and designed to help them connect through meetups, workshops, conferences and other live events.
+Existing event applications are highly saturated with an enormous variety of events. From hobby groups, to social meetups, all compete for space and attention on popular event platforms. In light of this, we see an opportunity to create an exclusive platform for professional development events catered to the local tech community.  
+
+This application is dedicated to connecting professionals in the technology industry and designed to help them come together through meetups, workshops, conferences and other live events. 
 
 ### R1.2 - Functionality/Features
 
