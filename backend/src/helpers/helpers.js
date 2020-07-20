@@ -12,4 +12,8 @@ module.exports = {
       return str[0].toUpperCase() + str.slice(1);
     }
   },
+
+  getTimestamp: () => {
+    return new Date().toUTCString();
+  }
 };
