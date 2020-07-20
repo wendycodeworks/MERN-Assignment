@@ -1,9 +1,9 @@
 const helpers = require("./helpers");
+const constants = require("../constants/logger");
 const fs = require('fs');
 
 class Logger {
   logLevels = ["mongoose", "logger-middleware"];
-  fileName = "tech-meet.log";
 
   constructor(logLevel, message) {
     if (this.logLevels.includes(logLevel)) {
@@ -18,7 +18,7 @@ class Logger {
   }
 
   writeToFile(message) {
-    fs.appendFile("tech-meet.log", `${helpers.getTimestamp()} | ${message}\n`, (err) =>  {
+    fs.appendFile(constants.filename, `${helpers.getTimestamp()} | ${message}\n`, (err) =>  {
       if (err) console.log(`Failed to write log!\nReason: '${err}'`);
     });
   }
