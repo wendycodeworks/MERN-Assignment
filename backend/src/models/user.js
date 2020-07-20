@@ -6,6 +6,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+    lastName: {
+    type: String,
+    required: true
+  },
   email: {
     type: String,
     required: true,
@@ -15,12 +19,10 @@ const userSchema = new mongoose.Schema({
       return validator.isEmail(value);
     },
   },
-  lastName: {
-    type: String,
-    required: true
-  },
   phoneNumber: {
     type: Number,
+    minlength: 6,
+    maxlength: 10
   },
   password: {
     type: String,
