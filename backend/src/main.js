@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Logger = require("./helpers/logger");
 const userRoute = require("./routes/user");
-const middleware = require("./middleware/middleware");
+const requestLogger = require("./middleware/requestLogger");
 const bodyParser = require("body-parser");
 const databaseConstants = require("./constants/database");
 require("dotenv").config();
@@ -12,7 +12,7 @@ const app = express();
 
 // register middleware
 app.use(bodyParser.json());
-app.use(middleware.requestLogger);
+app.use(requestLogger);
 
 // register routes
 app.use("/user", userRoute);

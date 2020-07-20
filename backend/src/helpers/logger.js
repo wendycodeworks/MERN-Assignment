@@ -3,7 +3,7 @@ const constants = require("../constants/logger");
 const fs = require('fs');
 
 class Logger {
-  logLevels = ["mongoose", "logger-middleware"];
+  logLevels = ["mongoose", "request-logger"];
 
   constructor(logLevel, message) {
     if (this.logLevels.includes(logLevel)) {

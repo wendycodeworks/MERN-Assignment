@@ -1,1 +1,37 @@
 
+Mon, 20 Jul 2020 23:04:41 GMT | [Request Logger]: Received POST request at'/user'
+{}
+Mon, 20 Jul 2020 23:04:52 GMT | [Request Logger]: Received POST request at'/user'
+{}
+Mon, 20 Jul 2020 23:05:45 GMT | [Request Logger]: Received POST request at'/user'
+{
+  "name": "morgan"
+}
+Mon, 20 Jul 2020 23:07:00 GMT | [Mongoose]: Connected to MongoDB!
+Mon, 20 Jul 2020 23:07:08 GMT | [Request Logger]: Received POST request at'/user'
+{
+  "name": "morgan"
+}
+Mon, 20 Jul 2020 23:07:10 GMT | [Request Logger]: Received POST request at'/user'
+Empty body!
+Mon, 20 Jul 2020 23:07:26 GMT | [Request Logger]: Received GET request at'/user'
+{}
+Mon, 20 Jul 2020 23:07:35 GMT | [Mongoose]: Connected to MongoDB!
+Mon, 20 Jul 2020 23:07:39 GMT | [Request Logger]: Received GET request at'/user'
+
+Mon, 20 Jul 2020 23:07:44 GMT | [Request Logger]: Received POST request at'/user'
+Empty body!
+Mon, 20 Jul 2020 23:07:47 GMT | [Request Logger]: Received POST request at'/user'
+{
+  "name": "morgan"
+}
+Mon, 20 Jul 2020 23:09:12 GMT | [Mongoose]: Connected to MongoDB!
+Mon, 20 Jul 2020 23:10:05 GMT | [Mongoose]: Connected to MongoDB!
+Mon, 20 Jul 2020 23:10:13 GMT | [Request Logger]: Received GET request at'/user'
+
+Mon, 20 Jul 2020 23:10:15 GMT | [Request Logger]: Received POST request at'/user'
+{
+  "name": "morgan"
+}
+Mon, 20 Jul 2020 23:10:20 GMT | [Request Logger]: Received POST request at'/user'
+Empty body!
