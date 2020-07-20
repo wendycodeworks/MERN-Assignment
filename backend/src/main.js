@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const Logger = require("./helpers/logger");
 require("dotenv").config();
 
 // create Express application.
@@ -11,10 +12,8 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("Connected to MongoDB!"))
-  .catch((err) => console.log(err));
+  .then(() => new Logger("mongoose", "Connected to MongoDB!"))
+  .catch((err) => new Logger("mongoose", err));
 
 // start listener
 app.listen(process.env.PORT);
-
-console.log(process.env.PORT);
