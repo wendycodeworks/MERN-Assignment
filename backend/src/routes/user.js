@@ -8,7 +8,7 @@ const testUser = {
 
 // user index.
 router.get('/', (req, res) => {
-  res.send(JSON.stringify(testData));
+  res.send(JSON.stringify(testUser));
 });
 
 // dynamic user route.
