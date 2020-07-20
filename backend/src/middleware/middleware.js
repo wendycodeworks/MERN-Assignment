@@ -6,5 +6,7 @@ module.exports = {
       "logger-middleware",
       `Received ${req.method} request at ${req.originalUrl}`
     );
+
+    next();
   },
 };

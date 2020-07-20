@@ -1,0 +1,3 @@
+Mon, 20 Jul 2020 02:46:43 GMT | [Mongoose]: MongooseServerSelectionError: getaddrinfo ENOTFOUND undefined
+Mon, 20 Jul 2020 02:46:48 GMT | [Mongoose]: Connected to MongoDB!
+Mon, 20 Jul 2020 02:47:10 GMT | [Mongoose]: Connected to MongoDB!
