@@ -1,27 +1,3 @@
-Mon, 20 Jul 2020 01:21:11 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 01:22:41 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 01:22:54 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 01:32:07 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 01:32:45 GMT | [Logger Middleware]: Received POST request
-Mon, 20 Jul 2020 01:34:39 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 01:34:46 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 01:35:00 GMT | [Logger Middleware]: Received POST request at /test
-Mon, 20 Jul 2020 01:36:59 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 01:45:32 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 01:46:00 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 01:46:02 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 01:57:59 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 01:58:10 GMT | [Logger Middleware]: Received POST request at /user
-Mon, 20 Jul 2020 01:58:16 GMT | [Logger Middleware]: Received POST request at /user/1
-Mon, 20 Jul 2020 01:58:24 GMT | [Logger Middleware]: Received GET request at /user/1
-Mon, 20 Jul 2020 01:59:28 GMT | [Logger Middleware]: Received GET request at /user
-Mon, 20 Jul 2020 01:59:40 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 02:01:08 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 02:01:11 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 02:01:14 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 02:02:08 GMT | [Logger Middleware]: Received GET request at /user
-Mon, 20 Jul 2020 02:03:33 GMT | [Logger Middleware]: Received GET request at /user
-Mon, 20 Jul 2020 02:04:43 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 02:04:45 GMT | [Logger Middleware]: Received GET request at /user
-Mon, 20 Jul 2020 02:05:06 GMT | [Mongoose]: Connected to MongoDB!
-Mon, 20 Jul 2020 02:05:08 GMT | [Logger Middleware]: Received GET request at /user
+Mon, 20 Jul 2020 02:46:43 GMT | [Mongoose]: MongooseServerSelectionError: getaddrinfo ENOTFOUND undefined
+Mon, 20 Jul 2020 02:46:48 GMT | [Mongoose]: Connected to MongoDB!
+Mon, 20 Jul 2020 02:47:10 GMT | [Mongoose]: Connected to MongoDB!
