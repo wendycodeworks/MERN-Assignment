@@ -17,5 +17,5 @@ mongoose
   .then(() => new Logger("mongoose", "Connected to MongoDB!"))
   .catch((err) => new Logger("mongoose", err));
 
-// start listener
+// start HTTP listener.
 app.listen(process.env.PORT);
