@@ -1,15 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Navbar from './components/NavBar';
 
-const HomePage = () => {
-
+class HomePage extends Component {
+    render() {
     return (
         <>
         <Navbar />
         <div> Hello World </div>
-        <div> Hello again?</div>
         </>
-    )
+        );
+    }
 }
 
 
