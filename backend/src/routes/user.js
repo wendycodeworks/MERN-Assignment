@@ -1,38 +1,41 @@
 const express = require("express");
 const router = express.Router();
-
-const users = [
-  {
-    id: 1,
-    name: "Morgan",
-  },
-  {
-    id: 2,
-    name: "Steve",
-  },
-];
-
-// user index.
-router.get("/", (req, res) => {
-  res.status(200).send(JSON.stringify(users));
-});
+const User = require("../models/user");
+const Logger = require("../helpers/logger");
 
 // dynamic user route.
 router.get("/:id", (req, res) => {
-  let foundUser = null;
-  users.forEach((user) => {
-    if (user.id == req.params.id) {
-      foundUser = user;
-    }
-  });
+  console.log(`Unhandled req for ${req.originalUrl}!`);
+});
 
-  if (foundUser) {
-    res.status(200).send(foundUser);
-  } else {
-    res.status(404).send({
-      error: "User not found!",
+router.post("/", async (req, res) => {
+  const { firstName, lastName, email, phoneNumber, password } = req.body;
+  const user = new User({
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    phoneNumber: phoneNumber,
+    password: password,
+  })
+    .save()
+    .then((doc) => {
+      res.status(200).send(JSON.stringify({
+        status: "OK"
+      }));
+
+      new Logger(
+        "mongoose",
+        `Created user with data:\n` +
+        JSON.stringify(doc, null, 2)
+      )
+    })
+    .catch((err) => {
+      res.status(400).send(JSON.stringify({
+        status: "Error"
+      }));
+
+      new Logger("mongoose", err);
     });
-  }
 });
 
 module.exports = router;
