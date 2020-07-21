@@ -1,19 +1,41 @@
 const express = require("express");
 const router = express.Router();
-
-const testUser = {
-  name: "Morgan",
-  age: 20
-};
-
-// user index.
-router.get('/', (req, res) => {
-  res.send(JSON.stringify(testUser));
-});
+const User = require("../models/user");
+const Logger = require("../helpers/logger");
 
 // dynamic user route.
 router.get("/:id", (req, res) => {
-  res.send(req.params.id);
+  console.log(`Unhandled req for ${req.originalUrl}!`);
+});
+
+router.post("/", async (req, res) => {
+  const { firstName, lastName, email, phoneNumber, password } = req.body;
+  const user = new User({
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    phoneNumber: phoneNumber,
+    password: password,
+  })
+    .save()
+    .then((doc) => {
+      res.status(200).send(JSON.stringify({
+        status: "OK"
+      }));
+
+      new Logger(
+        "mongoose",
+        `Created user with data:\n` +
+        JSON.stringify(doc, null, 2)
+      )
+    })
+    .catch((err) => {
+      res.status(400).send(JSON.stringify({
+        status: "Error"
+      }));
+
+      new Logger("mongoose", err);
+    });
 });
 
 module.exports = router;

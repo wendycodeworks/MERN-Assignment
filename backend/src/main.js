@@ -1,13 +1,21 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Logger = require("./helpers/logger");
-const middleware = require("./middleware/middleware");
+const userRoute = require("./routes/user");
+const requestLogger = require("./middleware/requestLogger");
+const bodyParser = require("body-parser");
 const databaseConstants = require("./constants/database");
 require("dotenv").config();
 
 // create Express application.
 const app = express();
-app.use(middleware.requestLogger);
+
+// register middleware
+app.use(bodyParser.json());
+app.use(requestLogger);
+
+// register routes
+app.use("/user", userRoute);
 
 // initialize connection to MongoDB via Mongoose.
 mongoose
