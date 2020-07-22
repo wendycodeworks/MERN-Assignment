@@ -1,6 +1,9 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, {Component} from 'react';
 
 class Events extends Component {
+
+    // make get request for events
+    // process into json
     render() {
         return(
             <>
