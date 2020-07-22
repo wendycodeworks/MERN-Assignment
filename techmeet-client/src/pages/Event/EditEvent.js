@@ -24,9 +24,9 @@ class EditEvent extends Component {
     handleSubmit(event) { 
         event.preventDefault();
         alert(this.state.title + ' has been updated!');
-
-
     }
+
+    // Use existing data as placeholder
 
 
 }

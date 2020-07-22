@@ -1,37 +1,39 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+import {Redirect} from 'react-router-dom';
 
-class AddEvent extends Component {
-    constructor(props) {
-    super(props) 
-    this.state = {
-        title: "",
-        description: "",
-        date: "",
-        location: "",
-        banner: "" 
+const AddEvent = () => {
+
+  const [eventTitle, setEventTitle] = useState("")
+  const [eventDescription, setEventDescription] = useState("")
+  const [eventDate, setEventDate] = useState("")
+  const [eventTime, setEventTime] = useState("")
+  const [eventLocation, setEventLocation] = useState("")
+  const [eventBanner, setEventBanner] = useState("")
+  const [isCreated, setIsCreated] = useState(false)
+  const [errorMessage, setErrorMessage] = useState("")
+    
+  function addEvent(){
+    if (eventTitle && eventDescription && eventDate && eventTime && eventLocation){
+      axios.post(`url/events`, {
+        event: {
+          title: eventTitle,
+          description: eventDescription,
+          date: eventDate,
+          time: eventTime,
+          location: eventLocation, 
+          banner: eventBanner
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+      })
+      .then(() => setIsCreated(true))
+    } else {
+      setErrorMessage("Required values!")
     }
+  }
 
-    handleChange = (event) => {
-        const field = event.target.name;
-        this.setState({
-        [field]: event.target.value
-        })
-      }
-
-    handleSubmit(event) { 
-        event.preventDefault();
-        alert(this.state.title + ' created!');
-
-
-    }
-
-    render() {
-        return (
-            
+  return (
     <div className="AddEventForm" style={{ margin: "0 250px" }}>
+      {errorMessage}
               <form encType="multipart/form-data" action="/upload" method="POST" onSubmit={this.handleSubmit}>
     
                 <div className="form-field">
@@ -40,9 +42,8 @@ class AddEvent extends Component {
                     type="text"
                     className="form-control"
                     placeholder="Enter event title"
-                    name="title"
-                    value={this.state.title}
-                    onChange={this.handleChange}
+                    value={eventTitle}
+                    onChange={e => setEventTitle(e.target.value)}
                   />
                 </div>
     
@@ -53,8 +54,8 @@ class AddEvent extends Component {
                     className="form-control"
                     placeholder="Enter event description"
                     name="description"
-                    value={this.state.description}
-                    onChange={this.handleChange}
+                    value={eventDescription}
+                    onChange={e => setEventDescription(e.target.value)}
                   />
                 </div>
     
@@ -63,10 +64,22 @@ class AddEvent extends Component {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Enter date in the format mm.dd.yyyy"
+                    placeholder="Enter date in the format dd-mm-yyyy"
                     name="date"
-                    value={this.state.date}
-                    onChange={this.handleChange}
+                    value={eventDate}
+                    onChange={e => setEventDate(e.target.value)}
+                  />
+                </div>
+
+                <div className="form-field">
+                  <label>Date:</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter date in the format dd-mm-yyyy"
+                    name="time"
+                    value={eventTime}
+                    onChange={e => setEventTime(e.target.value)}
                   />
                 </div>
 
@@ -77,8 +90,8 @@ class AddEvent extends Component {
                     className="form-control"
                     placeholder="Enter location"
                     name="location"
-                    value={this.state.location}
-                    onChange={this.handleChange}
+                    value={eventLocation}
+                    onChange={e => setEventLocation(e.target.value)}
                   />
                 </div>
 
@@ -90,18 +103,20 @@ class AddEvent extends Component {
                     placeholder="Upload event banner"
                     name="banner"
                     accept="image/*"
-                    value={this.state.banner}
-                    onChange={this.handleChange}
+                    value={eventBanner}
+                    onChange={e => setEventBanner(e.target.value)}
                   />
                 </div>
     
-                <button type="submit">Submit</button>
+                <button onClick={addEvent}>Submit</button>
+                {IsCreated && <Redirect to="/" />}
               </form>
             
             </div>
-        )
-    }
-    
+
+  )
 }
+
+
 
 export default AddEvent
