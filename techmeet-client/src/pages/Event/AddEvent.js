@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {Redirect} from 'react-router-dom';
+import {Redirect} from 'react-dom';
 
 const AddEvent = () => {
 
@@ -11,10 +11,11 @@ const AddEvent = () => {
   const [eventLocation, setEventLocation] = useState("")
   const [eventBanner, setEventBanner] = useState("")
   const [isCreated, setIsCreated] = useState(false)
+  const [successMessage, setSuccessMessage] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
     
   function addEvent(){
-    if (eventTitle && eventDescription && eventDate && eventTime && eventLocation){
+    if (eventTitle && eventDescription && eventDate && eventTime && eventLocation && eventBanner){
       axios.post(`url/events`, {
         event: {
           title: eventTitle,
@@ -26,6 +27,7 @@ const AddEvent = () => {
         }
       })
       .then(() => setIsCreated(true))
+      .then(() => setSuccessMessage("Yay! Event created!"))
     } else {
       setErrorMessage("Required values!")
     }
@@ -34,7 +36,7 @@ const AddEvent = () => {
   return (
     <div className="AddEventForm" style={{ margin: "0 250px" }}>
       {errorMessage}
-              <form encType="multipart/form-data" action="/upload" method="POST" onSubmit={this.handleSubmit}>
+              <form encType="multipart/form-data">
     
                 <div className="form-field">
                   <label>Title:</label>
@@ -72,7 +74,7 @@ const AddEvent = () => {
                 </div>
 
                 <div className="form-field">
-                  <label>Date:</label>
+                  <label>Time:</label>
                   <input
                     type="text"
                     className="form-control"
@@ -109,7 +111,8 @@ const AddEvent = () => {
                 </div>
     
                 <button onClick={addEvent}>Submit</button>
-                {IsCreated && <Redirect to="/" />}
+                
+                {isCreated && successMessage && <Redirect to="/" />}
               </form>
             
             </div>
