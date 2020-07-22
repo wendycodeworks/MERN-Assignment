@@ -23,17 +23,16 @@ class AddEvent extends Component {
 
     handleSubmit(event) { 
         event.preventDefault();
-        alert('A event was created! ' + this.state.title);
+        alert(this.state.title + ' created!');
 
 
     }
-
 
     render() {
         return (
             
     <div className="AddEventForm" style={{ margin: "0 250px" }}>
-              <form onSubmit={this.handleSubmit}>
+              <form encType="multipart/form-data" action="/upload" method="POST" onSubmit={this.handleSubmit}>
     
                 <div className="form-field">
                   <label>Title:</label>
@@ -60,7 +59,7 @@ class AddEvent extends Component {
                 </div>
     
                 <div className="form-field">
-                  <label>Event Date:</label>
+                  <label>Date:</label>
                   <input
                     type="text"
                     className="form-control"
@@ -72,7 +71,7 @@ class AddEvent extends Component {
                 </div>
 
                 <div className="form-field">
-                  <label>Event Location:</label>
+                  <label>Location:</label>
                   <input
                     type="text"
                     className="form-control"
