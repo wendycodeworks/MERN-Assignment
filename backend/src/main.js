@@ -8,6 +8,7 @@ require("dotenv").config();
 
 const userRoute = require("./routes/user");
 const uploadRoute = require("./routes/upload");
+const eventRoute = require("./routes/event");
 // base directory global
 global.__basedir = __dirname;
 
@@ -21,6 +22,7 @@ app.use(requestLogger);
 // register routes
 app.use("/user", userRoute);
 app.use("/upload", uploadRoute);
+app.use("/event", eventRoute);
 
 // initialize connection to MongoDB via Mongoose.
 mongoose

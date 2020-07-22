@@ -1,6 +1,7 @@
 const Logger = require("../helpers/logger");
 const Event = require("../models/event");
-
+const path = require("path");
+const fs = require("fs");
 const index = (req, res) => {};
 
 const create = async (req, res) => {
@@ -11,7 +12,14 @@ const create = async (req, res) => {
     date: date,
     time: time,
     location: location,
-    banner: banner,
+    // TODO make common helper.
+    banner: {
+      data: fs.readFileSync(
+        path.join(__basedir + "/uploads/" + req.file.filename)
+      ),
+      // TODO make dynamic.
+      contentType: "image/png" 
+    },
   });
 
   await event
@@ -24,8 +32,8 @@ const create = async (req, res) => {
       );
 
       new Logger(
-        "mongoose",
-        `Created event with data:\n${JSON.stringify(doc, null, 2)}`
+        "mongoose"
+        `Created event.`
       );
     })
     .catch((err) => {
