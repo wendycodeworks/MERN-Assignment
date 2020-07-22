@@ -1,11 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Logger = require("./helpers/logger");
-const userRoute = require("./routes/user");
 const requestLogger = require("./middleware/requestLogger");
 const bodyParser = require("body-parser");
 const databaseConstants = require("./constants/database");
 require("dotenv").config();
+
+const userRoute = require("./routes/user");
+const uploadRoute = require("./routes/upload");
+// base directory global
+global.__basedir = __dirname;
 
 // create Express application.
 const app = express();
@@ -16,6 +20,7 @@ app.use(requestLogger);
 
 // register routes
 app.use("/user", userRoute);
+app.use("/upload", uploadRoute);
 
 // initialize connection to MongoDB via Mongoose.
 mongoose

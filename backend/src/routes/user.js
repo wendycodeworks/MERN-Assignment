@@ -4,10 +4,8 @@ const User = require("../models/user");
 const Logger = require("../helpers/logger");
 
 // dynamic user route.
-router.get("/:id", (req, res) => {
-  console.log(`Unhandled req for ${req.originalUrl}!`);
+router.get("/:id", async (req, res) => {
 });
-
 router.post("/", async (req, res) => {
   const { firstName, lastName, email, phoneNumber, password } = req.body;
   const user = new User({
@@ -16,8 +14,9 @@ router.post("/", async (req, res) => {
     email: email,
     phoneNumber: phoneNumber,
     password: password,
-  })
-    .save()
+  });
+  
+  await user.save()
     .then((doc) => {
       res.status(200).send(JSON.stringify({
         status: "OK"
