@@ -2,8 +2,9 @@ const imageModel = require("../models/image");
 const fs = require("fs");
 const path = require("path");
 const Logger = require("../helpers/logger");
+
 // TODO refactor
-const uploadFile = (req, res, next) => {
+const uploadFile = (req, res) => {
   const obj = {
     name: req.body.name,
     description: req.body.desc,

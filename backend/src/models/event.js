@@ -22,7 +22,8 @@ const eventSchema = new mongoose.Schema({
         required: true
     },
     banner: {
-        
+      data: Buffer,
+      contentType: String
     },
 
 })
