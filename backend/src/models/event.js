@@ -22,7 +22,7 @@ const eventSchema = new mongoose.Schema({
         required: true
     },
     banner: {
-        
+        type: ObjectId
     },
 
 })
