@@ -24,7 +24,7 @@ const create = async (req, res) => {
 
       new Logger(
         "mongoose",
-        `Created user with data:\n` + JSON.stringify(doc, null, 2)
+        `Created user with data:\n${JSON.stringify(doc, null, 2)}`
       );
     })
     .catch((err) => {
