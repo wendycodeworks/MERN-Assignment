@@ -10,7 +10,7 @@ const eventSchema = new mongoose.Schema({
         required: true
     },
     date: {
-        type: String,
+        type: Date,
         required: true
     },
     time: {
@@ -22,7 +22,8 @@ const eventSchema = new mongoose.Schema({
         required: true
     },
     banner: {
-        
+        data: Buffer,
+        contentType: String
     },
 
 })
