@@ -6,7 +6,7 @@ const DeleteEvent = ({eventId, onDelete}) => {
     function deleteEvent() {
 
         axios.delete(`url${eventId}`)
-        .then{onDelete}
+        .then(onDelete)
     
     }
 
