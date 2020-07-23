@@ -1,6 +1,13 @@
 const Logger = require("../helpers/logger");
 const User = require("../models/user");
 
+const index = (req, res) => {
+  req.session.views = req.session.views ? req.session.views + 1 : 1;
+  res
+    .status(200)
+    .send(JSON.stringify({ status: "OK", views: req.session.views }));
+};
+
 const show = (req, res) => {};
 
 const create = async (req, res) => {
@@ -26,6 +33,9 @@ const create = async (req, res) => {
         "mongoose",
         `Created user with data:\n${JSON.stringify(doc, null, 2)}`
       );
+
+      // set registered user as user on the session.
+      req.session.user = user;
     })
     .catch((err) => {
       res.status(400).send(
@@ -39,6 +49,7 @@ const create = async (req, res) => {
 };
 
 module.exports = {
+  index: index,
   show: show,
-  create: create
-}
+  create: create,
+};

@@ -1,14 +1,22 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const passport = require("passport");
+const expressSession = require("express-session");
+const MongoStore = require("connect-mongo")(expressSession);
 const Logger = require("./helpers/logger");
 const requestLogger = require("./middleware/requestLogger");
 const bodyParser = require("body-parser");
 const databaseConstants = require("./constants/database");
 require("dotenv").config();
 
+// configure passport.
+require("./config/passport");
+
 const userRoute = require("./routes/user");
 const uploadRoute = require("./routes/upload");
 const eventRoute = require("./routes/event");
+const loginRoute = require("./routes/login");
+
 // base directory global
 global.__basedir = __dirname;
 
@@ -16,13 +24,26 @@ global.__basedir = __dirname;
 const app = express();
 
 // register middleware
+app.use(expressSession({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    expires: 600000
+  },
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
+app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(requestLogger);
 
 // register routes
 app.use("/user", userRoute);
 app.use("/upload", uploadRoute);
 app.use("/event", eventRoute);
+app.use("/login", loginRoute);
 
 // initialize connection to MongoDB via Mongoose.
 mongoose

@@ -28,8 +28,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 6,
-    maxlength: 36
+    maxlength: 36,
+    // use mongoose-bcrypt plugin.
+    bcrypt: true
   }
 });
+
+userSchema.plugin(require("mongoose-bcrypt"));
 
 module.exports = mongoose.model("User", userSchema);
