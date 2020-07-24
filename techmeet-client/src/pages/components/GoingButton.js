@@ -4,14 +4,16 @@ const RSVPButton = (props) => {
     const [rsvp, setRSVP] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
 
+    // Need to pull in userId from session or login 
+
     function sendResponse(){
-        if (eventTitle && eventDescription && eventDate && eventTime && eventLocation && eventBanner){
+        if (userId){
             axios.put(`url/events/${props.eventId}`, {
               event: {
-              attendees: [userId, rsvp]
+              attendees: [userId, "Going"]
               }
             })
-            .then(() => setIsEdited(true))
+            .then(() => setRSVP("Going"))
             .then(() => setSuccessMessage("Yay! RVSP sent!"))
           } else {
             setErrorMessage("Required values!")
@@ -20,7 +22,7 @@ const RSVPButton = (props) => {
 
     return(
         <div>
-            <button onClick={sendResponse}>RSVP</button>
+            <button onClick={sendResponse}>Going</button>
         </div>
     )
 }
