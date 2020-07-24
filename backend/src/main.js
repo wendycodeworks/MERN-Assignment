@@ -15,7 +15,7 @@ require("./config/passport");
 const userRoute = require("./routes/user");
 const uploadRoute = require("./routes/upload");
 const eventRoute = require("./routes/event");
-const loginRoute = require("./routes/login");
+const authRoute = require("./routes/auth");
 
 // base directory global
 global.__basedir = __dirname;
@@ -43,7 +43,7 @@ app.use(requestLogger);
 app.use("/user", userRoute);
 app.use("/upload", uploadRoute);
 app.use("/event", eventRoute);
-app.use("/login", loginRoute);
+app.use("/auth", authRoute);
 
 // initialize connection to MongoDB via Mongoose.
 mongoose
