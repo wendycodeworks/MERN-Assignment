@@ -3,20 +3,24 @@ const constants = require("../constants/logger");
 const fs = require('fs');
 
 class Logger {
-  logLevels = ["mongoose", "request-logger"];
-
   constructor(logLevel, message) {
+  this.logLevels = ["mongoose", "request-logger"];
     if (this.logLevels.includes(logLevel)) {
       if (logLevel.includes('-')) {
-        this.writeToFile(`[${helpers.capitalize(logLevel, '-')}]: ${message}`);
+        this.writeToSTDOut(`[${helpers.capitalize(logLevel, '-')}]: ${message}`);
       } else {
-        this.writeToFile(`[${helpers.capitalize(logLevel)}]: ${message}`);
+        this.writeToSTDOut(`[${helpers.capitalize(logLevel)}]: ${message}`);
       }
     } else {
       console.log("Invalid log level for message: '${message}'");
     }
   }
 
+  writeToSTDOut(message) {
+    console.log(`${helpers.getTimestamp()} | ${message}`);
+  }
+
+  // heroku is mean. :(
   writeToFile(message) {
     fs.appendFile(constants.filename, `${helpers.getTimestamp()} | ${message}\n`, (err) =>  {
       if (err) console.log(`Failed to write log!\nReason: '${err}'`);
