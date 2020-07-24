@@ -1,24 +1,28 @@
 import React, {useState, useEffect} from 'react'
 
 const RSVPButton = (props) => {
-    const [rsvp, setRSVP] = useState("")
-    const [event, setEvent] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const [rsvp, setRSVP] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
 
-    
-    useEffect(() => {
-        axios.patch(`url/events/${props.eventId}`)
-            .then(res => {
-                setIsLoading(false)
-                setEvent(res.data)
+    function sendResponse(){
+        if (eventTitle && eventDescription && eventDate && eventTime && eventLocation && eventBanner){
+            axios.put(`url/events/${props.eventId}`, {
+              event: {
+              attendees: [userId, rsvp]
+              }
             })
-            .catch(e => {
-                setErrorMessage("There was a problem, please refresh and try again")
-                setIsLoading(false)
-            })
-    }, [])
+            .then(() => setIsEdited(true))
+            .then(() => setSuccessMessage("Yay! RVSP sent!"))
+          } else {
+            setErrorMessage("Required values!")
+          }
+    }
 
+    return(
+        <div>
+            <button onClick={sendResponse}>RSVP</button>
+        </div>
+    )
 }
 
 export default RSVPButton

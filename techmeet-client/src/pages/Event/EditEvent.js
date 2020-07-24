@@ -124,7 +124,7 @@ const EditEvent = (props) => {
               />
             </div>
 
-            <button onClick={addEvent}>Submit</button>
+            <button onClick={editEvent}>Submit</button>
             
             {isCreated && successMessage && <Redirect to="/" />}
           </form> :
