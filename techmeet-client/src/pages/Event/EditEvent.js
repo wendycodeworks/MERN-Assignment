@@ -34,7 +34,7 @@ const EditEvent = (props) => {
 
     function editEvent(){
         if (eventTitle && eventDescription && eventDate && eventTime && eventLocation && eventBanner){
-            axios.post(`url/events/${props.eventId}`, {
+            axios.put(`url/events/${props.eventId}`, {
               event: {
                 title: eventTitle,
                 description: eventDescription,
