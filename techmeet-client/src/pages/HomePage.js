@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Navbar from './components/NavBar';
-import Events from './Events'
+import Events from './Event/ViewEvents'
 import AddEvent from './Event/AddEvent'
 
 

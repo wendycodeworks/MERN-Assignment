@@ -9,7 +9,7 @@ const Event = (props) => {
         axios.get(`url/events/${props.eventId}`)
             .then(res => {
                 setIsLoading(false)
-                setSong(res.data)
+                setEvent(res.data)
             })
             .catch(e => {
                 setErrorMessage("There was a problem, please refresh and try again")
