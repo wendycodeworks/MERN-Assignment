@@ -25,7 +25,9 @@ const eventSchema = new mongoose.Schema({
       data: Buffer,
       contentType: String
     },
-
+    attendees: {
+      type: [mongoose.Schema.Types.ObjectId]
+    }
 })
 
 module.exports = mongoose.model("Event", eventSchema);
