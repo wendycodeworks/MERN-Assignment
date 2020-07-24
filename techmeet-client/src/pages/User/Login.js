@@ -3,7 +3,10 @@ import axios from 'axios'
 
 const Login = () => {
 
-
+    function userlogin() {
+        axios.post(url/auth/login)
+        .then()
+    }
     return(
 <div>
     
@@ -17,10 +20,12 @@ const Login = () => {
         <input type="password" name="password" />
     </div>
     <div>
-        <button onClick={Login}>Login</button>
+        <button onClick={userlogin}>Login</button>
     </div>
 </form>
 
 </div>
     )
 }
+
+export default Login

@@ -126,7 +126,7 @@ const EditEvent = (props) => {
 
             <button onClick={editEvent}>Submit</button>
             
-            {isCreated && successMessage && <Redirect to="/" />}
+            {isEdited && successMessage && <Redirect to="/" />}
           </form> :
           <h2>Loading...</h2>    
         }
