@@ -6,7 +6,7 @@ const Event = (props) => {
     const [errorMessage, setErrorMessage] = useState("")
 
     useEffect(() => {
-        axios.get(`url/events/${props.eventId}`)
+        axios.get(`https://shrouded-refuge-96179.herokuapp.com/events/${props.eventId}`)
             .then(res => {
                 setIsLoading(false)
                 setEvent(res.data)
