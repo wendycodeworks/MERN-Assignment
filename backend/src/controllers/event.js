@@ -10,14 +10,13 @@ const index = async (req, res) => {
 };
 
 const create = async (req, res) => {
-  const { title, description, date, time, location } = req.body;
+  const { title, description, date, location } = req.body;
   let event = null;
   if (!req.file) {
        event = new Event({
          title: title,
          description: description,
          date: date,
-         time: time,
          location: location,
        });
   } else {
@@ -25,7 +24,6 @@ const create = async (req, res) => {
       title: title,
       description: description,
       date: date,
-      time: time,
       location: location,
       banner: {
       // by this time multer has already stored the file.
@@ -50,13 +48,32 @@ const create = async (req, res) => {
         "mongoose"
         `Created event.`
       );
-    })
-    .catch((err) => {
+    }) .catch((err) => {
       new Logger("mongoose", err);
     });
 };
 
+const update = (req, res) => {
+  const { title, description, date, location } = req.body;
+  const event = Event.findById(req.params.id);
+  event.title = title;
+  event.decription = description;
+  event.date = date;
+  event.location = location;
+
+  event.save()
+       .then((event) =>{
+         new Logger("mongoose", `Updated event: ${req.params.id}`);
+         res.status(200).send(JSON.stringify(event));
+       })
+       .catch((err) => {
+         new Logger("mongoose", err);
+         res.status(400).send({ status: "ERROR" });
+       });
+}
+
 module.exports = {
   index: index,
-  create: create
+  create: create,
+  update: update
 }
