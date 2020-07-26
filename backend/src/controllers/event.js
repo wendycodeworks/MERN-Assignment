@@ -9,11 +9,7 @@ const index = (req, res) => {};
 const create = async (req, res) => {
   const { title, description, date, time, location } = req.body;
   let event = null;
-  path.exists(
-    storageConstants.uploadsPath + req.file.filename,
-    // check if file does not exist.
-    (exists) => {
-     if (!exists) {
+  if (!req.file) {
        event = new Event({
          title: title,
          description: description,
@@ -21,26 +17,25 @@ const create = async (req, res) => {
          time: time,
          location: location,
        });
-     } else {
-       event = new Event({
-         title: title,
-         description: description,
-         date: date,
-         time: time,
-         location: location,
-         banner: {
-           // by this time multer has already stored the file.
-           data: fs.readFileSync(
-             storageConstants.uploadsPath + req.file.filename
-           ),
-           // TODO make dynamic.
-           contentType: "image/png"
-         },
-       });
-     }
+  } else {
+    event = new Event({
+      title: title,
+      description: description,
+      date: date,
+      time: time,
+      location: location,
+      banner: {
+      // by this time multer has already stored the file.
+        data: fs.readFileSync(
+          storageConstants.uploadsPath + req.file.filename
+        ),
+        // TODO make dynamic.
+        contentType: "image/png"
+      },
     });
+   };
 
-  await event
+   event
     .save()
     .then((doc) => {
       res.status(200).send(
