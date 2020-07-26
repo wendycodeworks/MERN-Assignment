@@ -4,7 +4,10 @@ const path = require("path");
 const fs = require("fs");
 const storageConstants = require("../constants/storage");
 
-const index = (req, res) => {};
+const index = (req, res) => {
+  const events = await Event.find();
+  res.status(200).send(JSON.stringify(events));
+};
 
 const create = async (req, res) => {
   const { title, description, date, time, location } = req.body;
