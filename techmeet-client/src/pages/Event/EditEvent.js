@@ -15,7 +15,7 @@ const EditEvent = (props) => {
     const [errorMessage, setErrorMessage] = useState("")
 
     useEffect(() => {
-        axios.get(`url/events/${props.eventId}`)
+        axios.get(`https://shrouded-refuge-96179.herokuapp.com/events/${props.eventId}`)
         .then(res => {
             setIsLoading(false)
 
@@ -34,7 +34,7 @@ const EditEvent = (props) => {
 
     function editEvent(){
         if (eventTitle && eventDescription && eventDate && eventTime && eventLocation && eventBanner){
-            axios.post(`url/events/${props.eventId}`, {
+            axios.put(`url/events/${props.eventId}`, {
               event: {
                 title: eventTitle,
                 description: eventDescription,
@@ -124,9 +124,9 @@ const EditEvent = (props) => {
               />
             </div>
 
-            <button onClick={addEvent}>Submit</button>
+            <button onClick={editEvent}>Submit</button>
             
-            {isCreated && successMessage && <Redirect to="/" />}
+            {isEdited && successMessage && <Redirect to="/" />}
           </form> :
           <h2>Loading...</h2>    
         }

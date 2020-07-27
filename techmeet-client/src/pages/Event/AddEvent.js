@@ -16,7 +16,7 @@ const AddEvent = () => {
     
   function addEvent(){
     if (eventTitle && eventDescription && eventDate && eventTime && eventLocation && eventBanner){
-      axios.post(`url/events`, {
+      axios.post(`https://shrouded-refuge-96179.herokuapp.com/events`, {
         event: {
           title: eventTitle,
           description: eventDescription,

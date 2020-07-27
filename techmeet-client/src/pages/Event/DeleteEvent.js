@@ -5,7 +5,7 @@ const DeleteEvent = ({eventId, onDelete}) => {
 
     function deleteEvent() {
 
-        axios.delete(`url${eventId}`)
+        axios.delete(`https://shrouded-refuge-96179.herokuapp.com/${eventId}`)
         .then(onDelete)
     
     }
