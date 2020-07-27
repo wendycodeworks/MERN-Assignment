@@ -4,6 +4,7 @@ const eventController = require("../controllers/event");
 const upload = require("../middleware/upload");
 
 router.get("/", eventController.index);
+router.get("/:id", eventController.show);
 router.post("/", upload.single("image"), eventController.create);
 router.put("/:id", eventController.update);
 router.delete("/:id", eventController.destroy);

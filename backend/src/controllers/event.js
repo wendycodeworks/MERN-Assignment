@@ -9,8 +9,17 @@ const index = async (req, res) => {
   res.status(200).send(JSON.stringify(events));
 };
 
+const show = async (req, res) => {
+    const event = await Event.findById(req.params.id);
+    if (!event) {
+        res.status(400).send({ status: "ERR NOT FOUND" });
+    } else {
+        res.status(200).send(JSON.stringify(event));
+    }
+}
+
 const create = async (req, res) => {
-  const { title, description, date, location } = req.body;
+  const { title, description, date, location, contentType } = req.body;
   let event = null;
   if (!req.file) {
        event = new Event({
@@ -30,8 +39,7 @@ const create = async (req, res) => {
         data: fs.readFileSync(
           storageConstants.uploadsPath + req.file.filename
         ),
-        // TODO make dynamic.
-        contentType: "image/png"
+        contentType: contentType
       },
     });
    };
@@ -72,8 +80,22 @@ const update = (req, res) => {
        });
 }
 
+const destroy = async (req, res) => {
+    await Event.findByIdAndRemove({ _id: req.params.id }, (err, event) => {
+        if(!err) {
+            res.status(200).send(event);
+        } else {
+            new Logger("mongoose", `Failed to destroy event: ${ req.params.id }\nReason: '${err}'`);
+            res.status(400).send(JSON.stringify({ status: "ERR NOT FOUND" }));
+        }
+    });
+
+}
+
 module.exports = {
   index: index,
+  show: show,
   create: create,
-  update: update
+  update: update,
+  destroy: destroy
 }
