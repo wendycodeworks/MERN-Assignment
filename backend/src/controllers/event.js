@@ -10,6 +10,12 @@ const index = async (req, res) => {
 };
 
 const show = async (req, res) => {
+    const event = await Event.findById(req.params.id);
+    if (!event) {
+        res.status(400).send({ status: "ERR NOT FOUND" });
+    } else {
+        res.status(200).send(JSON.stringify(event));
+    }
 }
 
 const create = async (req, res) => {
@@ -80,7 +86,7 @@ const destroy = async (req, res) => {
             res.status(200).send(event);
         } else {
             new Logger("mongoose", `Failed to destroy event: ${ req.params.id }\nReason: '${err}'`);
-            res.status(400).send(JSON.stringify({ status: "ERROR" }));
+            res.status(400).send(JSON.stringify({ status: "ERR NOT FOUND" }));
         }
     });
 
@@ -88,6 +94,7 @@ const destroy = async (req, res) => {
 
 module.exports = {
   index: index,
+  show: show,
   create: create,
   update: update,
   destroy: destroy
