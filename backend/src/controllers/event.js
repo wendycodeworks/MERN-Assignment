@@ -61,23 +61,27 @@ const create = async (req, res) => {
     });
 };
 
-const update = (req, res) => {
+const update = async (req, res) => {
   const { title, description, date, location } = req.body;
-  const event = Event.findById(req.params.id);
-  event.title = title;
-  event.decription = description;
-  event.date = date;
-  event.location = location;
+  const event = await Event.findById(req.params.id);
 
-  event.save()
-       .then((event) =>{
-         new Logger("mongoose", `Updated event: ${req.params.id}`);
-         res.status(200).send(JSON.stringify(event));
-       })
-       .catch((err) => {
-         new Logger("mongoose", err);
-         res.status(400).send({ status: "ERROR" });
-       });
+  if (!event) {
+      new Logger("mongoose", `Cannot find event with id: ${req.params.id}`);
+  } else {
+      event.title = title;
+      event.decription = description;
+      event.date = date;
+      event.location = location;
+      event.save()
+           .then((event) =>{
+               new Logger("mongoose", `Updated event: ${req.params.id}`);
+               res.status(200).send(JSON.stringify(event));
+           })
+           .catch((err) => {
+               new Logger("mongoose", err);
+               res.status(400).send({ status: "ERROR" });
+           });
+  }
 }
 
 const destroy = async (req, res) => {
