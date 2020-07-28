@@ -1,19 +1,19 @@
 import React, {useState, useEffect} from 'react'
 
-const RSVPButton = (props) => {
-    const [rsvp, setRSVP] = useState(false)
+const GoingButton = (props) => {
+    const [going, setGoing] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
 
     // Need to pull in userId from session or login 
 
     function sendResponse(){
         if (userId){
-            axios.put(`url/events/${props.eventId}`, {
+            axios.put(`url/event/${props.eventId}`, {
               event: {
               attendees: [userId, "Going"]
               }
             })
-            .then(() => setRSVP("Going"))
+            .then(() => setGoing("Going"))
             .then(() => setSuccessMessage("Yay! RVSP sent!"))
           } else {
             setErrorMessage("Required values!")

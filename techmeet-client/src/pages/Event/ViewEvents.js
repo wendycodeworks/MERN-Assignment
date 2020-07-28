@@ -1,26 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, {Component} from 'react';
 
-const Event = (props) => {
+class Events extends Component {
 
-    const [isLoading, setIsLoading] = useState(true)
-    const [errorMessage, setErrorMessage] = useState("")
-
-    useEffect(() => {
-        axios.get(`https://shrouded-refuge-96179.herokuapp.com/events`)
-            .then(res => {
-                setIsLoading(false)
-                setEvent(res.data)
-            })
-            .catch(e => {
-                setErrorMessage("There was a problem, please refresh and try again")
-                setIsLoading(false)
-            })
-    }, [])
-
-    return (
-        <div>
-        </div>
-    )
+    // make get request for events
+    // process into json
+    render() {
+        return(
+            <>
+            <div>Event Title</div>
+            
+            <div>Event Title</div>
+            
+            <div>Event Title</div>
+            
+            <div>Event Title</div>
+            
+            <div>Event Title</div>
+            </>
+            );
+    }
 }
 
 export default Events

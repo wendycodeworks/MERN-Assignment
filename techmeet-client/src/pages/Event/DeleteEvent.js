@@ -5,12 +5,12 @@ const DeleteEvent = ({eventId, onDelete}) => {
 
     function deleteEvent() {
 
-        axios.delete(`https://shrouded-refuge-96179.herokuapp.com/${eventId}`)
+        axios.delete(`url${eventId}`)
         .then(onDelete)
     
     }
 
-    return <button onClick={deleteEvent}> Delete </button>
+    return <button class="delete is-medium" onClick={deleteEvent}> Delete </button>
 }
 
 export default DeleteEvent
