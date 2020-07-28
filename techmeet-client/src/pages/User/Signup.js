@@ -44,7 +44,7 @@ const Signup = () => {
                                     <input 
                                     className="input is-medium is-rounded" 
                                     type="text"
-                                    placeholder="hello@example.com" 
+                                    placeholder="First Name" 
                                     value={userFirstName}
                                     onChange={e => setUserFirstName(e.target.value)} />
                                 </div>
@@ -54,7 +54,7 @@ const Signup = () => {
                                     <input 
                                     className="input is-medium is-rounded" 
                                     type="text"
-                                    placeholder="hello@example.com" 
+                                    placeholder="Last Name" 
                                     value={userLastName}
                                     onChange={e => setUserLastName(e.target.value)} />
                                 </div>
@@ -64,7 +64,7 @@ const Signup = () => {
                                     <input 
                                     className="input is-medium is-rounded" 
                                     type="text"
-                                    placeholder="hello@example.com" 
+                                    placeholder="0400 000 000" 
                                     value={userPhone}
                                     onChange={e => setUserPhone(e.target.value)} />
                                 </div>
