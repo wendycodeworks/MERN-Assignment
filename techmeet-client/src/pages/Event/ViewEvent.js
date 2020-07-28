@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import axios from 'axios'
 
 const Event = (props) => {
     const [event, setEvent] = useState([])
@@ -6,7 +7,7 @@ const Event = (props) => {
     const [errorMessage, setErrorMessage] = useState("")
 
     useEffect(() => {
-        axios.get(`https://shrouded-refuge-96179.herokuapp.com/events/${props.eventId}`)
+        axios.get(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}`)
             .then(res => {
                 setIsLoading(false)
                 setEvent(res.data)
@@ -18,13 +19,30 @@ const Event = (props) => {
     }, [])
 
     return (
-        <div>
-               {errorMessage && <h3>{errorMessage}</h3>}
-            {!isLoading ? 
-                <li>{event.title} {event.date}</li> : 
-                <h2>Loading...</h2>
-            }
-        </div>
+       <div class="container is-fluid">
+           <div class="card mb-1">
+                <header class="card-header">
+                    <p class="card-header-title is-size-1">
+                    Linux installation for absolute noobs
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                        <a href="#"></a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                        <br/>
+                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+               <div class="card-content">
+                    <div class="content">
+
+                    </div>
+                </div>
+            </div>
+       </div>
     )
 }
 
