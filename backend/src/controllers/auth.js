@@ -1,5 +1,6 @@
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
+const Logger = require("../helpers/logger");
 
 const register = async (req, res) => {
   const { firstName, lastName, email, phoneNumber, password } = req.body;
