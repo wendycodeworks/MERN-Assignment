@@ -38,9 +38,10 @@ passport.use(new JwtStrategy(
     {
         jwtFromRequest: (req) => {
             let token = null;
-
-            if (req && req.cookies) {
-                token = req.cookies['jwt'];
+            if (req && req.cookies["jwt"]) {
+              token = req.cookies['jwt'];
+            } else if (req && req.body.token) {
+              token = req.body.token;
             }
 
             return token;
