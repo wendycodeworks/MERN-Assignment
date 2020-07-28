@@ -2,11 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const expressSession = require("express-session");
+const cookieParser = require("cookie-parser");
 const MongoStore = require("connect-mongo")(expressSession);
 const Logger = require("./helpers/logger");
 const requestLogger = require("./middleware/requestLogger");
 const bodyParser = require("body-parser");
 const databaseConstants = require("./constants/database");
+const cors = require("cors");
 require("dotenv").config();
 
 // configure passport.
@@ -33,8 +35,10 @@ app.use(expressSession({
   },
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(requestLogger);

@@ -7,7 +7,7 @@ const authRedirect = (req, res, next) => {
   next();
 };
 
-const authorize(req, res, next) {
+const authorize = (req, res, next) => {
   if (!req.session && !req.session.user) {
     // TODO
     return;
@@ -16,7 +16,7 @@ const authorize(req, res, next) {
   next();
 }
 
-const authAdmin(req, res, next) {
+const authAdmin = (req, res, next) => {
   if (!req.session && !req.session.user) {
     return;
     // TODO add role to User schema
