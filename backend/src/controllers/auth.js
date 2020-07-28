@@ -14,9 +14,11 @@ const register = async (req, res) => {
   await user
     .save()
     .then((doc) => {
+      const token = jwt.sign({ sub: user._id }, process.env.JWT_SECRET);
       res.status(200).send(
         JSON.stringify({
           status: "OK",
+          token: token
         })
       );
 
@@ -48,8 +50,10 @@ const logout = async (req, res, next) => {
 const login = async (req, res, next) => {
     const token = jwt.sign({ sub: req.user._id }, process.env.JWT_SECRET);
   res.cookie("jwt", token);
-  res.status(200).send(JSON.stringify({ status: "Logged in!" }));
-  console.log(token);
+  res.status(200).send(JSON.stringify({
+    status: "OK",
+    token: token
+  }));
 }
 
 module.exports = {
