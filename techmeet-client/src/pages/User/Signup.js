@@ -18,11 +18,12 @@ const Signup = () => {
                 password: userPassword,
                 firstName: userFirstName,
                 lastName: userLastName,
-                phone: userPhone
+                phoneNumber: userPhone
 
             })
             .then((res) => {
-              console.log(res)
+                alert("Successfully created!")
+              console.log(res.data.token)
             }) .catch((error) => {
               console.log(error)
             })
