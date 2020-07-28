@@ -7,7 +7,7 @@ const Event = (props) => {
     const [errorMessage, setErrorMessage] = useState("")
 
     useEffect(() => {
-        axios.get(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}`)
+        axios.get(`https://shrouded-refuge-96179.herokuapp.com/event/`)
             .then(res => {
                 setIsLoading(false)
                 setEvent(res.data)
@@ -19,28 +19,31 @@ const Event = (props) => {
     }, [])
 
     return (
-       <div class="container is-fluid">
-           <div class="card mb-1">
-                <header class="card-header">
-                    <p class="card-header-title is-size-1">
-                    Linux installation for absolute noobs
-                    </p>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a href="#"></a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br/>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-               <div class="card-content">
-                    <div class="content">
+       <div className="container is-half mt-6">
+            <div className="tile is-ancestor">
 
+                <div className="tile is-parent is-vertical">
+                        <div className="tile is-child box">
+                        <p className="title">Linux Environment for Absolute Noobs</p>
+                        </div>
+                        <div className="tile is-child box">
+                        <p className="title is-5">About</p>
+                        <p className="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero iure, harum facilis voluptas quam similique saepe eum. Perspiciatis, corrupti tempore quis at voluptatum deleniti eaque magni itaque earum mollitia eveniet laboriosam illo corporis assumenda! Velit, facere necessitatibus error est laborum eligendi! Quisquam nulla quos vero officiis aspernatur aperiam quidem at.</p>
+                        </div>
+                </div>
+            
+                <div className="tile is-4 is-vertical is-parent">
+                    <div className="tile is-child box">
+                    <p className="title">Details</p>
+                    <p className="title is-5">Date</p>
+                    <p className="title is-5">Time</p>
+                    <p className="title is-5">Location</p>
+                    </div>
+                    <div className="tile is-child box">
+                    <p className="title">Attendees</p>
                     </div>
                 </div>
+
             </div>
        </div>
     )
