@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const expressSession = require("express-session");
+const cookieParser = require("cookie-parser");
 const MongoStore = require("connect-mongo")(expressSession);
 const Logger = require("./helpers/logger");
 const requestLogger = require("./middleware/requestLogger");
@@ -35,6 +36,7 @@ app.use(expressSession({
 }));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(requestLogger);
