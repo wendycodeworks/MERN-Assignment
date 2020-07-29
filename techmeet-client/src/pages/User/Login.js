@@ -67,7 +67,6 @@ const Login = () => {
                             </button>
                             {isLoggedIn && <Redirect to="/" />}
 
-                    
                     </div>
                 </div>
                 </div>   

@@ -1,28 +1,36 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useContext} from 'react'
+import UserContext from '../../context/UserContext';
+
 
 const GoingButton = (props) => {
     const [going, setGoing] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
+    const { userContext, setUserContext } = useContext(UserContext);
 
     // Need to pull in userId from session or login 
 
     function sendResponse(){
-        if (userId){
-            axios.put(`url/event/${props.eventId}`, {
-              event: {
-              attendees: [userId, "Going"]
-              }
-            })
-            .then(() => setGoing("Going"))
-            .then(() => setSuccessMessage("Yay! RVSP sent!"))
-          } else {
-            setErrorMessage("Required values!")
-          }
+        if (UserContext.token){
+          axios.put(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}/attendees`, {
+              _id:`${props.eventId}/`,
+               attendee: userContext._id
+          })
+          .then((res) => {
+            alert("Great success!")
+            console.log(res)
+          }) .catch((error) => {
+            console.log(error)
+          })
+        } else {
+          alert("Please login in to RSVP to this techmeet!")
+
+        }
+
     }
 
     return(
         <div>
-            <button onClick={sendResponse}>Going</button>
+            <button className="button is-success" onClick={sendResponse}>Going</button>
         </div>
     )
 }
