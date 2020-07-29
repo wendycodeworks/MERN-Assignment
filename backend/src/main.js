@@ -52,7 +52,7 @@ app.use("/auth", authRoute);
 // initialize connection to MongoDB via Mongoose.
 mongoose
   .connect(
-    databaseConstants.connectionStringLocal,
+    databaseConstants.connectionStringRemote,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
