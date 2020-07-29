@@ -97,7 +97,7 @@ const destroy = async (req, res) => {
 
 }
 
-const addAttendee = (req, res) => {
+const addAttendee = async (req, res) => {
     try {
         const event = await Event.findById(req.body._id);
         let attendees = event.attendees;
