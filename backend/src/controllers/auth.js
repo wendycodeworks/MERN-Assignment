@@ -57,7 +57,7 @@ const login = async (req, res, next) => {
     status: "OK",
     token: token,
     user: req.user.firstName,
-    _id: user._id
+    _id: req.user._id
   }));
 }
 
