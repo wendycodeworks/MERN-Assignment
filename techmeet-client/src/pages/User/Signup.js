@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import axios from 'axios'
 import 'bulma'
+import UserContext from "../../context/UserContext";
 
 const Signup = () => {
 
@@ -10,6 +11,7 @@ const Signup = () => {
     const [userLastName, setUserLastName] = useState("")
     const [userPhone, setUserPhone] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
+    const { userContext, setUserContext } = useContext(UserContext);
 
     function signup() {
         if (userEmail && userPassword && userFirstName && userLastName && userPhone){
@@ -23,7 +25,10 @@ const Signup = () => {
             })
             .then((res) => {
                 alert("Successfully created!")
-              console.log(res.data.token)
+                setUserContext({
+                    token: res.data.token,
+                    user: res.data.firstName
+                });
             }) .catch((error) => {
               console.log(error)
             })
@@ -39,7 +44,6 @@ const Signup = () => {
                     <div className="signup">
                         {errorMessage}
                         
-                    <form>
                     <div className="field">
                                 <div className="control">
                                     <input 
@@ -92,12 +96,10 @@ const Signup = () => {
                             </div>
                         <br />
                             <button className="button is-block is-fullwidth is-primary is-medium is-rounded" 
-                                type="submit" 
                                 onClick={signup}>
                             Submit
                             </button>
-                    </form>
-                    
+
                     </div>
                 </div>
                 </div>   
