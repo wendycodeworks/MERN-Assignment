@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import GoogleMaps from '../components/GoogleMaps'
+import AttendeesList from '../components/AttendeesList';
 
 const ViewEvent = (props) => {
     const [event, setEvent] = useState([])
@@ -20,6 +21,17 @@ const ViewEvent = (props) => {
     }, [])
 
     
+    function renderAttendees(){
+        return(
+            <>
+              {/* {event.attendees.map((attendee, index) => (
+                  <AttendeesList key={event._id} attendee={attendee} index={index} />
+              ))} */}
+
+              {console.log(event.attendees)}
+            </>
+        )
+    }
 
 
 
@@ -51,11 +63,8 @@ const ViewEvent = (props) => {
                         <div className="tile is-child box"><GoogleMaps /></div>
                             <div className="tile is-child box">
                                 <p className="title">Attendees</p>
-                                    <li>First Name</li>
-                                        <li>First Name</li>
-                                            <li>First Name</li>
-                                                <li>First Name</li>
-                                                    <li>First Name</li>
+                                {renderAttendees()}
+                                   
                         </div>
                     </div>
                 </div>

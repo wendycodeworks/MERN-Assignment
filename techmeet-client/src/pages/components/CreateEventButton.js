@@ -1,22 +1,23 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, Redirect } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 
 const CreateEventButton = () => {
     const { userContext } = useContext(UserContext);
+    function warning(){
+        alert("Please login to create a Techmeet!")
+    }
+
     if (userContext.token) {
         return (
             <Link to="/new" className="button">
-              Start a Techmeet
+                Start a Techmeet
             </Link>
         );
     } else {
         return (
             <>
-            {alert("Please login to continue!")}
-            <Link to="/login" className="button">
-              Start a Techmeet
-            </Link>
+            <Link to="/login" className="button" onClick={warning}>Start a Techmeet</Link>
             </>
         );
     }   
