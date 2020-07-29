@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import RingLoader from "react-spinners/RingLoader"
-
+import { Link } from 'react-router-dom'
 
 const ViewEvents = () => {
     const [events, setEvents] = useState([])
@@ -28,11 +28,11 @@ const ViewEvents = () => {
                             <div className="columns">
                                 <div className="column is-3"></div>
                                     <div className="column is-6">   
-                                        <div className="card">
+                                        <Link to={`/event/${event._id}`} className="card">
                                             <div className="card-header">
                                                 <div className="card-header-title">{event.title}</div>    
                                             </div>                
-                                        </div>
+                                        </Link>
                                     </div>
                                 <div className="column is-3"></div>
                             </div>
