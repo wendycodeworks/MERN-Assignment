@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Redirect} from 'react-dom';
 import 'bulma'
 import UserContext from "../../context/UserContext";
+import DateTimePicker from "react-datetime-picker";
 
 const AddEvent = () => {
 
@@ -16,13 +17,14 @@ const AddEvent = () => {
   // const [successMessage, setSuccessMessage] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
     const { userContext, setUserContext } = useContext(UserContext);
+  const [dateTime, setDateTime] = useState(new Date());
     
   function addEvent(){
-    if (eventTitle && eventDescription && eventDate && eventLocation){
+    if (eventTitle && eventDescription && dateTime && eventLocation){
       axios.post(`https://shrouded-refuge-96179.herokuapp.com/event`, {
           title: eventTitle,
           description: eventDescription,
-          date: eventDate,
+          date: dateTime,
           location: eventLocation,
           token: userContext.token
       })
@@ -67,14 +69,11 @@ const AddEvent = () => {
       
                   <div className="field">
                     <label className="label">Date:</label>
-                    <input
-                      type="text"
-                      className="input"
-                      placeholder="Enter date in the format dd-mm-yyyy"
-                      name="date"
-                      value={eventDate}
-                      onChange={e => setEventDate(e.target.value)}
+                    <DateTimePicker
+                      onChange={(date) => setDateTime(date)}
+                      value={dateTime}
                     />
+
                   </div>
 
                   <div className="field">
