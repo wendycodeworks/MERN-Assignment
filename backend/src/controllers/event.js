@@ -104,6 +104,8 @@ const addAttendee = async (req, res) => {
         attendees.push(req.body.attendee);
         await event.update({ _id: req.body._id }, {
             attendees: attendees
+        }, (err) => {
+            new Logger("mongoose", err);
         });
         new Logger("mongoose", `Added attendee with id: ${req.body.attendee} to ${req.body._id}`);
         res.status(200).send(JSON.stringify({ status: "OK" }));
