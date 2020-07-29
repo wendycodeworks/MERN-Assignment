@@ -17,7 +17,8 @@ const Login = () => {
             })
             .then((res) => {
                 setUserContext({
-                    token: res.data.token
+                    token: res.data.token,
+                    user: res.data.firstName
                 })
             }) .catch((error) => {
               console.log(error)
@@ -33,7 +34,7 @@ const Login = () => {
                 <div className="hero-body has-text-centered">
                     <div className="login">
                         {errorMessage}
-
+                 
                             <div className="field">
                                 <div className="control">
                                     <input 
