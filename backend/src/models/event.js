@@ -23,6 +23,10 @@ const eventSchema = new mongoose.Schema({
     },
     attendees: {
       type: [mongoose.Schema.Types.ObjectId]
+    },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
     }
 })
 
