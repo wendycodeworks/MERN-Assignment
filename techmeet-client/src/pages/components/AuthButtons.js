@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 
 const AuthButtons = () => {
-    const { userContext } = useContext(UserContext);
+    const { userContext, setUserContext } = useContext(UserContext);
     if (userContext.token) {
         return (
-            <Link to="/logout" className="button">
+            <button className="button" onClick={() => setUserContext({
+                token: null,
+                user: null
+            })}>
               Logout
-            </Link>
+            </button>
         );
     } else {
         return (
