@@ -8,7 +8,7 @@ const AddEvent = () => {
   const [eventTitle, setEventTitle] = useState("")
   const [eventDescription, setEventDescription] = useState("")
   const [eventDate, setEventDate] = useState("")
-  const [eventTime, setEventTime] = useState("")
+  // const [eventTime, setEventTime] = useState("")
   const [eventLocation, setEventLocation] = useState("")
   const [eventBanner, setEventBanner] = useState("")
   const [isCreated, setIsCreated] = useState(false)
