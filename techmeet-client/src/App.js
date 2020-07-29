@@ -9,7 +9,6 @@ import Signup from "./pages/User/Signup.js"
 import UserContext from "./context/UserContext";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userContext, setUserContext] = useState({
     token: null,
     user: null

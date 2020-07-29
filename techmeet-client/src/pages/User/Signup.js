@@ -27,7 +27,8 @@ const Signup = () => {
                 alert("Successfully created!")
                 setUserContext({
                     token: res.data.token,
-                    user: res.data.firstName
+                    user: res.data.firstName,
+                    _id: res.data._id
                 });
             }) .catch((error) => {
               console.log(error)
