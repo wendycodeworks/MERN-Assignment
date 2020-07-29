@@ -8,8 +8,11 @@ class HomePage extends Component {
     return (
         <>
         <div> 
-            <section className="hero is-fullheight-with-navbar">
-                <div className="hero-body is-medium">
+            <section className="hero is-fullheight-with-navbar" style=
+            {{backgroundImage: `url(${require("./components/assets/techmeet-landing-page.png")})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'}} >
+                <div className="hero-body is-medium ml-6">
                     <div className="container">
                         <h1 className="title is-1">
                             Events near you
@@ -18,9 +21,9 @@ class HomePage extends Component {
                                 Your local tech ecosystem at your figure tips
                             </h2>
                             <BrowseButton />
-                    </div>
+                    </div>                    
                 </div>
-            </section>
+                </section>
             <section>
                 <div className="hero-body">
                     <div className="container">

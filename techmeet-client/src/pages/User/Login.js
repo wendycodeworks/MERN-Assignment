@@ -17,7 +17,6 @@ const Login = () => {
                 email: userEmail,
                 password: userPassword
             })
-            .then() => setIsLoggedIn(true);
             .then((res) => {
                 setUserContext({
                     token: res.data.token,
