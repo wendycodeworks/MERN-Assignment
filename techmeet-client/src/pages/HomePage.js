@@ -8,8 +8,8 @@ class HomePage extends Component {
     return (
         <>
         <div> 
-            <section className="hero is-fullheight-with-navbar" style=
-            {{backgroundImage: `url(${require("./components/assets/techmeet-landing-page.png")})`,
+            <section className="hero is-fullheight-with-navbar" 
+            style= {{backgroundImage: `url(${require("./components/assets/techmeet-landing-page.png")})`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'}} >
                 <div className="hero-body is-medium ml-6">

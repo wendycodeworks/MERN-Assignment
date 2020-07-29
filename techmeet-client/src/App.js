@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom"
 import Login from "./pages/User/Login.js"
 import Signup from "./pages/User/Signup.js"
 import UserContext from "./context/UserContext";
+import ViewEvents from './pages/Event/ViewEvents';
 
 const App = () => {
   const [userContext, setUserContext] = useState({
@@ -26,6 +27,7 @@ const App = () => {
             <Route exact path="/new" component={AddEvent} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/event" component={ViewEvent}/>
+            <Route exact path="/events" component={ViewEvents}/>
             <Route exact path="/signup" component={Signup}/>
         </Switch>
       </UserContext.Provider>
