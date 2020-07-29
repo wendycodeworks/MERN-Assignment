@@ -20,15 +20,13 @@ const AddEvent = () => {
   function addEvent(){
     if (eventTitle && eventDescription && eventDate && eventLocation){
       axios.post(`https://shrouded-refuge-96179.herokuapp.com/event`, {
-        event: {
           title: eventTitle,
           description: eventDescription,
           date: eventDate,
-          location: eventLocation
-        }
+          location: eventLocation,
+          token: userContext.token
       })
       .then((res) => {
-        setIsCreated(true)
         alert("Success!")
         console.log(res)
       }) .catch((error) => {
