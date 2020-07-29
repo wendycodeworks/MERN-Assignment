@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import 'bulma'
 import UserContext from "../../context/UserContext";
@@ -7,6 +8,7 @@ const Login = () => {
     const [userEmail, setUserEmail] = useState("")
     const [userPassword, setUserPassword] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
     const { userContext, setUserContext } = useContext(UserContext);
 
     function login() {
@@ -15,12 +17,15 @@ const Login = () => {
                 email: userEmail,
                 password: userPassword
             })
+            .then() => setIsLoggedIn(true);
             .then((res) => {
                 setUserContext({
                     token: res.data.token,
                     user: res.data.firstName
                 })
-            }) .catch((error) => {
+            }) 
+             
+            .catch((error) => {
               console.log(error)
             })
           } else {
@@ -59,6 +64,7 @@ const Login = () => {
                             <button className="button is-block is-fullwidth is-primary is-medium is-rounded" onClick={login}>
                             Login
                             </button>
+                            {isLoggedIn && <Redirect to="/" />}
 
                     
                     </div>

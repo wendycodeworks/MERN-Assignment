@@ -70,7 +70,7 @@ const NavBar = () => {
                             <Link to="/login" className="button is-info is-outlined">
                                 Log in
                             </Link>
-        <button>{userContext.firstName}</button>
+                                <div>   {userContext.firstName} </div>
                         </div>
                     </div>
             
