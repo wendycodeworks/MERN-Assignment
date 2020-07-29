@@ -9,7 +9,7 @@ const AddEvent = () => {
   const [eventTitle, setEventTitle] = useState("")
   const [eventDescription, setEventDescription] = useState("")
   const [eventDate, setEventDate] = useState("")
-  const [eventTime, setEventTime] = useState("")
+  // const [eventTime, setEventTime] = useState("")
   const [eventLocation, setEventLocation] = useState("")
   const [eventBanner, setEventBanner] = useState("")
   const [isCreated, setIsCreated] = useState(false)
@@ -29,6 +29,7 @@ const AddEvent = () => {
       })
       .then((res) => {
         setIsCreated(true)
+        alert("Success!")
         console.log(res)
       }) .catch((error) => {
         console.log(error)
