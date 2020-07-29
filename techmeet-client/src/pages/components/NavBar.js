@@ -3,10 +3,13 @@ import 'bulma';
 import { Link } from "react-router-dom"
 import logo from "./assets/logo.png"
 import SearchBar from "./SearchBar.js"
+import { useContext } from 'react';
+import UserContext from '../_utils/UserContext';
 
-class NavBar extends Component {
 
-    render(){
+const NavBar = () => {
+    
+    const msg = useContext(UserContext);
 
     return(
             <div>
@@ -67,6 +70,7 @@ class NavBar extends Component {
                             <Link to="/login" className="button is-info is-outlined">
                                 Log in
                             </Link>
+                            <button>{msg}</button>
                         </div>
                     </div>
             
@@ -74,7 +78,6 @@ class NavBar extends Component {
             </nav>
         </div>
     )
-}
 }
 
 export default NavBar
