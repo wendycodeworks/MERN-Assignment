@@ -20,7 +20,8 @@ const Login = () => {
             .then((res) => {
                 setUserContext({
                     token: res.data.token,
-                    user: res.data.firstName
+                    user: res.data.firstName,
+                    _id: res.data._id
                 })
                 alert("You're logged in and ready to go!")
                 setIsLoggedIn(true)

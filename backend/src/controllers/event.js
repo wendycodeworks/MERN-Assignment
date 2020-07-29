@@ -19,7 +19,7 @@ const show = async (req, res) => {
 }
 
 const create = async (req, res) => {
-  const { title, description, date, location, contentType } = req.body;
+  const { title, description, date, location, owner, contentType } = req.body;
   let event = null;
   if (!req.file) {
        event = new Event({
@@ -27,6 +27,7 @@ const create = async (req, res) => {
          description: description,
          date: date,
          location: location,
+         owner: owner
        });
   } else {
     event = new Event({

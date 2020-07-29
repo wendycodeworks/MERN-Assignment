@@ -10,7 +10,6 @@ import UserContext from "./context/UserContext";
 import ViewEvents from './pages/Event/ViewEvents';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userContext, setUserContext] = useState({
     token: null,
     user: null
