@@ -65,7 +65,7 @@ const NavBar = () => {
                     <div className="navbar-item">
                         <div className="buttons">
                            <AuthButtons />
-        <button>{userContext.firstName}</button>
+                            <div>{userContext.firstName}</div>
                         </div>
                     </div>
             

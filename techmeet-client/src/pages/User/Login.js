@@ -22,6 +22,8 @@ const Login = () => {
                     token: res.data.token,
                     user: res.data.firstName
                 })
+                alert("You're logged in and ready to go!")
+                setIsLoggedIn(true)
             }) 
              
             .catch((error) => {
