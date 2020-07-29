@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import GoogleMaps from '../components/GoogleMaps'
 
-const Event = (props) => {
+const ViewEvent = (props) => {
     const [event, setEvent] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [errorMessage, setErrorMessage] = useState("")
 
     useEffect(() => {
-        axios.get(`https://shrouded-refuge-96179.herokuapp.com/event/`)
+        axios.get(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}`)
             .then(res => {
                 setIsLoading(false)
                 setEvent(res.data)
@@ -24,7 +24,7 @@ const Event = (props) => {
            <div className="tile is-ancestor">
             <div className="tile is-parent is-vertical">
                             <div className="tile is-child is-8 box">
-                                <p className="title">Linux Environment for Absolute Beginners</p>
+                                <p className="title">{event.title}</p>
                                 </div>
                 </div>
            </div>
@@ -32,16 +32,17 @@ const Event = (props) => {
                 <div className="tile is-parent"> 
                     <div className="tile is-child box">
                                 <p className="title is-5">About</p>
-                                <p className="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero iure, harum facilis voluptas quam similique saepe eum. Perspiciatis, corrupti tempore quis at voluptatum deleniti eaque magni itaque earum mollitia eveniet laboriosam illo corporis assumenda! Velit, facere necessitatibus error est laborum eligendi! Quisquam nulla quos vero officiis aspernatur aperiam quidem at.</p>
+                                    <p className="text">{event.description}</p>                    
                     </div>   
                             
                 </div>         
                     <div className="tile is-4 is-vertical is-parent">
                         <div className="tile is-child box">
                         <p className="title">Details</p>
-                        <p className="title is-5">Date</p>
-                        <p className="title is-5">Time</p>
+                        <p className="title is-5">Date & Time</p>
+                            <p className="text">{event.date}</p>
                         <p className="title is-5">Location</p>
+                        <p className="text">{event.location}</p>
                         </div>
                         <div className="tile is-child box"><GoogleMaps /></div>
                         <div className="tile is-child box">
@@ -59,4 +60,4 @@ const Event = (props) => {
     )
 }
 
-export default Event
+export default ViewEvent
