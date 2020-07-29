@@ -97,10 +97,27 @@ const destroy = async (req, res) => {
 
 }
 
+const addAttendee = (req, res) => {
+    try {
+        const event = await Event.findById(req.body._id);
+        let attendees = event.attendees;
+        attendees.push(req.body.attendee);
+        event.update({ _id: req.body._id }, {
+            attendees: attendees
+        });
+        new Logger("mongoose", `Added attendee with id: ${req.body.attendee} to ${req.body._id}`);
+        res.status(200).send(JSON.stringify({ status: "OK" }));
+    } catch (err) {
+        new Logger("mongoose", `Couldn't find event to add attendee to with id: ${req.body._id}`);
+        res.status(400).send(JSON.stringify({ status: "ERR NOT FOUND" }));
+    }
+}
+
 module.exports = {
   index: index,
   show: show,
   create: create,
   update: update,
-  destroy: destroy
+  destroy: destroy,
+  addAttendee: addAttendee
 }
