@@ -102,13 +102,13 @@ const addAttendee = async (req, res) => {
         const event = await Event.findById(req.body._id);
         let attendees = event.attendees;
         attendees.push(req.body.attendee);
-        event.update({ _id: req.body._id }, {
+        await event.update({ _id: req.body._id }, {
             attendees: attendees
         });
         new Logger("mongoose", `Added attendee with id: ${req.body.attendee} to ${req.body._id}`);
         res.status(200).send(JSON.stringify({ status: "OK" }));
     } catch (err) {
-        new Logger("mongoose", `Couldn't find event to add attendee to with id: ${req.body._id}`);
+        new Logger("mongoose", `Couldn't find event to add attendee to with id: ${req.body._id}.\nReason: ${err}`);
         res.status(400).send(JSON.stringify({ status: "ERR NOT FOUND" }));
     }
 }
