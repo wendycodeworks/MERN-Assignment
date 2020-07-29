@@ -19,6 +19,10 @@ const ViewEvent = (props) => {
             })
     }, [])
 
+    
+
+
+
     return (
        <div className="container is-half mt-6">
            <div className="tile is-ancestor">
@@ -38,20 +42,20 @@ const ViewEvent = (props) => {
                 </div>         
                     <div className="tile is-4 is-vertical is-parent">
                         <div className="tile is-child box">
-                        <p className="title">Details</p>
-                        <p className="title is-5">Date & Time</p>
-                            <p className="text">{event.date}</p>
-                        <p className="title is-5">Location</p>
-                        <p className="text">{event.location}</p>
+                            <p className="title">Details</p>
+                                <p className="title is-5">Date & Time</p>
+                                    <p className="text">{event.date}</p>
+                                        <p className="title is-5">Location</p>
+                                            <p className="text">{event.location}</p>
                         </div>
                         <div className="tile is-child box"><GoogleMaps /></div>
-                        <div className="tile is-child box">
-                        <p className="title">Attendees</p>
-                        <li>First Name</li>
-                        <li>First Name</li>
-                        <li>First Name</li>
-                        <li>First Name</li>
-                        <li>First Name</li>
+                            <div className="tile is-child box">
+                                <p className="title">Attendees</p>
+                                    <li>First Name</li>
+                                        <li>First Name</li>
+                                            <li>First Name</li>
+                                                <li>First Name</li>
+                                                    <li>First Name</li>
                         </div>
                     </div>
                 </div>

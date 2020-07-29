@@ -9,14 +9,12 @@ const AddEvent = () => {
 
   const [eventTitle, setEventTitle] = useState("")
   const [eventDescription, setEventDescription] = useState("")
-  const [eventDate, setEventDate] = useState("")
-  // const [eventTime, setEventTime] = useState("")
   const [eventLocation, setEventLocation] = useState("")
   const [eventBanner, setEventBanner] = useState("")
   const [isCreated, setIsCreated] = useState(false)
   // const [successMessage, setSuccessMessage] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
-    const { userContext, setUserContext } = useContext(UserContext);
+  const { userContext, setUserContext } = useContext(UserContext);
   const [dateTime, setDateTime] = useState(new Date());
     
   function addEvent(){
@@ -26,10 +24,11 @@ const AddEvent = () => {
           description: eventDescription,
           date: dateTime,
           location: eventLocation,
-          token: userContext.token
+          token: userContext.token,
+          owner: userContext._id
       })
       .then((res) => {
-        alert("Success!")
+        alert("Great success!")
         console.log(res)
       }) .catch((error) => {
         console.log(error)
@@ -102,8 +101,7 @@ const AddEvent = () => {
                   </div>
       
                   <button className="button is-block is-fullwidth is-primary is-medium is-rounded" onClick={addEvent}>Submit</button>
-                  
-                  {isCreated && <Redirect to="/" />}
+                    {isCreated && <Redirect to="/" />}
                   </div>
             </div>
           </div>

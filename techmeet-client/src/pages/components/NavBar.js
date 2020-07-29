@@ -6,6 +6,7 @@ import SearchBar from "./SearchBar.js"
 import { useContext } from 'react';
 import UserContext from '../../context/UserContext';
 import AuthButtons from "./AuthButtons";
+import CreateEventButton from './CreateEventButton';
 
 
 const NavBar = () => {
@@ -38,8 +39,11 @@ const NavBar = () => {
 
                 <div id="navbarBasicExample" className="navbar-menu">
                     <div className="navbar-end">
-                    <Link to="/new" className='navbar-item'><button className='button is-info is-outlined'>Start a TechMeet</button></Link>
-                         <div className="navbar-item has-dropdown is-hoverable">
+                        <div className="navbar-item">
+                            <CreateEventButton />
+                        </div>
+                    
+                                             <div className="navbar-item has-dropdown is-hoverable">
                                 <a className="navbar-link">
                                 More
                                 </a>
