@@ -20,7 +20,8 @@ const register = async (req, res) => {
         JSON.stringify({
           status: "OK",
           token: token,
-          user: user.firstName
+          user: user.firstName,
+          _id: user._id
         })
       );
 
@@ -55,7 +56,8 @@ const login = async (req, res, next) => {
   res.status(200).send(JSON.stringify({
     status: "OK",
     token: token,
-    user: req.user.firstName
+    user: req.user.firstName,
+    _id: user._id
   }));
 }
 
