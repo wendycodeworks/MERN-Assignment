@@ -95,8 +95,7 @@ const Signup = () => {
                                 </div>
                             </div>
                         <br />
-                            <button className="button is-block is-fullwidth is-primary is-medium is-rounded" 
-                                onClick={signup}>
+                            <button className="button is-block is-fullwidth is-primary is-medium is-rounded" onClick={signup} >
                             Submit
                             </button>
 

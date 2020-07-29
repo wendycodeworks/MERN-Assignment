@@ -5,6 +5,7 @@ import logo from "./assets/logo.png"
 import SearchBar from "./SearchBar.js"
 import { useContext } from 'react';
 import UserContext from '../../context/UserContext';
+import AuthButtons from "./AuthButtons";
 
 
 const NavBar = () => {
@@ -63,14 +64,8 @@ const NavBar = () => {
 
                     <div className="navbar-item">
                         <div className="buttons">
-                            <Link to="/signup" className="button is-info">
-                                <strong>Sign up</strong>
-                            </Link>
-
-                            <Link to="/login" className="button is-info is-outlined">
-                                Log in
-                            </Link>
-                                <div>   {userContext.firstName} </div>
+                           <AuthButtons />
+        <button>{userContext.firstName}</button>
                         </div>
                     </div>
             
