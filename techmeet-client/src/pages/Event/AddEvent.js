@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import {Redirect} from 'react-dom';
 import 'bulma'
+import UserContext from "../../context/UserContext";
 
 const AddEvent = () => {
 
@@ -14,6 +15,7 @@ const AddEvent = () => {
   const [isCreated, setIsCreated] = useState(false)
   // const [successMessage, setSuccessMessage] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
+    const { userContext, setUserContext } = useContext(UserContext);
     
   function addEvent(){
     if (eventTitle && eventDescription && eventDate && eventLocation){
