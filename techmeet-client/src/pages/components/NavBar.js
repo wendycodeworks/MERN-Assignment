@@ -4,12 +4,12 @@ import { Link } from "react-router-dom"
 import logo from "./assets/logo.png"
 import SearchBar from "./SearchBar.js"
 import { useContext } from 'react';
-import UserContext from '../_utils/UserContext';
+import UserContext from '../../context/UserContext';
 
 
 const NavBar = () => {
     
-    const msg = useContext(UserContext);
+    const { userContext, setUserContext } = useContext(UserContext);
 
     return(
             <div>
@@ -70,7 +70,7 @@ const NavBar = () => {
                             <Link to="/login" className="button is-info is-outlined">
                                 Log in
                             </Link>
-                            <button>{msg}</button>
+        <button>{userContext.firstName}</button>
                         </div>
                     </div>
             
