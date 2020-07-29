@@ -2,27 +2,49 @@ const Logger = require("../helpers/logger");
 const Event = require("../models/event");
 const path = require("path");
 const fs = require("fs");
-const index = (req, res) => {};
+const storageConstants = require("../constants/storage");
+
+const index = async (req, res) => {
+  const events = await Event.find();
+  res.status(200).send(JSON.stringify(events));
+};
+
+const show = async (req, res) => {
+    const event = await Event.findById(req.params.id);
+    if (!event) {
+        res.status(400).send({ status: "ERR NOT FOUND" });
+    } else {
+        res.status(200).send(JSON.stringify(event));
+    }
+}
 
 const create = async (req, res) => {
-  const { title, description, date, time, location, banner } = req.body;
-  const event = new Event({
-    title: title,
-    description: description,
-    date: date,
-    time: time,
-    location: location,
-    // TODO make common helper.
-    banner: {
-      data: fs.readFileSync(
-        path.join(__basedir + "/uploads/" + req.file.filename)
-      ),
-      // TODO make dynamic.
-      contentType: "image/png" 
-    },
-  });
+  const { title, description, date, location, contentType } = req.body;
+  let event = null;
+  if (!req.file) {
+       event = new Event({
+         title: title,
+         description: description,
+         date: date,
+         location: location,
+       });
+  } else {
+    event = new Event({
+      title: title,
+      description: description,
+      date: date,
+      location: location,
+      banner: {
+      // by this time multer has already stored the file.
+        data: fs.readFileSync(
+          storageConstants.uploadsPath + req.file.filename
+        ),
+        contentType: contentType
+      },
+    });
+   };
 
-  await event
+   event
     .save()
     .then((doc) => {
       res.status(200).send(
@@ -30,18 +52,54 @@ const create = async (req, res) => {
           status: "OK",
         })
       );
-
       new Logger(
         "mongoose"
         `Created event.`
       );
-    })
-    .catch((err) => {
+    }) .catch((err) => {
       new Logger("mongoose", err);
     });
 };
 
+const update = async (req, res) => {
+  const { title, description, date, location } = req.body;
+  const event = await Event.findById(req.params.id);
+
+  if (!event) {
+      new Logger("mongoose", `Cannot find event with id: ${req.params.id}`);
+  } else {
+      event.title = title;
+      event.decription = description;
+      event.date = date;
+      event.location = location;
+      event.save()
+           .then((event) =>{
+               new Logger("mongoose", `Updated event: ${req.params.id}`);
+               res.status(200).send(JSON.stringify(event));
+           })
+           .catch((err) => {
+               new Logger("mongoose", err);
+               res.status(400).send({ status: "ERROR" });
+           });
+  }
+}
+
+const destroy = async (req, res) => {
+    await Event.findByIdAndRemove({ _id: req.params.id }, (err, event) => {
+        if(!err) {
+            res.status(200).send(event);
+        } else {
+            new Logger("mongoose", `Failed to destroy event: ${ req.params.id }\nReason: '${err}'`);
+            res.status(400).send(JSON.stringify({ status: "ERR NOT FOUND" }));
+        }
+    });
+
+}
+
 module.exports = {
   index: index,
-  create: create
+  show: show,
+  create: create,
+  update: update,
+  destroy: destroy
 }
