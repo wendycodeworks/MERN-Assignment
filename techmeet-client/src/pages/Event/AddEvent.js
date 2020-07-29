@@ -27,6 +27,7 @@ const AddEvent = () => {
       })
       .then((res) => {
         setIsCreated(true)
+        alert("Success!")
         console.log(res)
       }) .catch((error) => {
         console.log(error)
