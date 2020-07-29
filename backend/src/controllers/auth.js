@@ -19,7 +19,8 @@ const register = async (req, res) => {
       res.status(200).send(
         JSON.stringify({
           status: "OK",
-          token: token
+          token: token,
+          user: user.firstName
         })
       );
 
@@ -53,7 +54,8 @@ const login = async (req, res, next) => {
   res.cookie("jwt", token);
   res.status(200).send(JSON.stringify({
     status: "OK",
-    token: token
+    token: token,
+    user: req.user.firstName
   }));
 }
 
