@@ -59,7 +59,7 @@ const ViewEvent = (props) => {
     }
 
     function eventButtons(){
-        if (userContext._id === event.owner) {
+        if (userContext.token && userContext._id === event.owner) {
             return(
                 <Link className="button is-block is-fullwidth is-warning is-medium" to={`/event/${props.eventId}/edit`}>
                     Edit Techmeet
