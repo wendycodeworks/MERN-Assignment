@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
-import RingLoader from "react-spinners/RingLoader"
 import { Link } from 'react-router-dom'
+import LoadSpinner from '../components/LoadSpinner';
 
 const ViewEvents = () => {
     const [events, setEvents] = useState([])
@@ -57,10 +57,7 @@ const ViewEvents = () => {
             <div className="container mt-6">
                 {errorMessage && <h3>{errorMessage}</h3>}
                 {!isLoading ? renderEvents():
-                        <RingLoader
-                        size={150}
-                        color={"#123abc"}
-                        />}
+                        <LoadSpinner />}
             </div>
         </div>
 

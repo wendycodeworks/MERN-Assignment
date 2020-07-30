@@ -12,8 +12,6 @@ const AddEvent = () => {
   const [eventLocation, setEventLocation] = useState("")
   const [eventBanner, setEventBanner] = useState("")
   const [isCreated, setIsCreated] = useState(false)
-  // const [successMessage, setSuccessMessage] = useState("")
-  const [errorMessage, setErrorMessage] = useState("")
   const { userContext, setUserContext } = useContext(UserContext);
   const [dateTime, setDateTime] = useState(new Date());
     
@@ -34,77 +32,84 @@ const AddEvent = () => {
         console.log(error)
       })
     } else {
-      setErrorMessage("Required values!")
+      alert("Please complete all values!")
     }
   }
 
   return (
-    <div className="container is-fluid has-text-centred">
-      <div className="columns is-mobile is-centred">
-        {errorMessage}
-        <div className="column is-half is-centred">
-                  <div className="field">
-                    <label className="label">Title:</label>
-                    <input
-                      type="text"
-                      className="input"
-                      placeholder="Enter event title"
-                      value={eventTitle}
-                      onChange={e => setEventTitle(e.target.value)}
-                    />
-                  </div>
-      
-                  <div className="field">
-                    <label className="label">Description:</label>
-                    <input
-                      type="text"
-                      className="input"
-                      placeholder="Enter event description"
-                      name="description"
-                      value={eventDescription}
-                      onChange={e => setEventDescription(e.target.value)}
-                    />
-                  </div>
-      
-                  <div className="field">
-                    <label className="label">Date:</label>
-                    <DateTimePicker
-                      onChange={(date) => setDateTime(date)}
-                      value={dateTime}
-                    />
+    <div className="container is-fluid">
+      <div className="columns is-mobile">
+        <div className="column is-3"></div>
+          <div className="column is-5 is-centered mt-6">
+            <h1 className="title has-text-centered">Create your Techmeet</h1>
+                    <div className="field">
+                      <label className="label">Title</label>
+                      <input
+                        type="text"
+                        className="input"
+                        placeholder="Enter event title"
+                        value={eventTitle}
+                        onChange={e => setEventTitle(e.target.value)}
+                      />
+                    </div>
+        
+                    <div className="field">
+                      <label className="label">Description</label>
+                      <input
+                        type="text"
+                        className="input"
+                        placeholder="Enter event description"
+                        name="description"
+                        value={eventDescription}
+                        onChange={e => setEventDescription(e.target.value)}
+                      />
+                    </div>
+        
+                    <div className="field">
+                      <label className="label">Date & Time</label>
+                      <DateTimePicker
+                        onChange={(date) => setDateTime(date)}
+                        value={dateTime}
+                      />
 
-                  </div>
+                    </div>
 
-                  <div className="field">
-                    <label className="label">Location:</label>
-                    <input
-                      type="text"
-                      className="input"
-                      placeholder="Enter location"
-                      name="location"
-                      value={eventLocation}
-                      onChange={e => setEventLocation(e.target.value)}
-                    />
-                  </div>
+                    <div className="field">
+                      <label className="label">Location</label>
+                      <input
+                        type="text"
+                        className="input"
+                        placeholder="Enter location"
+                        name="location"
+                        value={eventLocation}
+                        onChange={e => setEventLocation(e.target.value)}
+                      />
+                    </div>
 
-                  <div className="field">
-                    <label className="label">Event Banner:</label>
-                    <input
-                      type="file"
-                      className="input"
-                      placeholder="Upload event banner"
-                      name="banner"
-                      accept="image/*"
-                      value={eventBanner}
-                      onChange={e => setEventBanner(e.target.value)}
-                    />
+                      <div className="field">
+                        <div className="label">Event Banner</div>
+                        <label>
+                          <input className="file-input" type="file" placeholder="Upload event banner"
+                            name="banner"
+                            accept="image/*"
+                            value={eventBanner}
+                            onChange={e => setEventBanner(e.target.value)}/>
+                              <span className="file-cta">
+                            <span className="file-icon">
+                              <i className="fa fa-upload"></i>
+                            </span>
+                            <span className="file-label">
+                              Choose a file…
+                            </span>
+                          </span>
+                        </label>
+                      </div>
+                      <button className="button is-primary is-fullwidth is-medium is-rounded my-5" onClick={addEvent}>Submit</button>
+                      {isCreated && <Redirect to="/" />}
+                    </div>
                   </div>
-      
-                  <button className="button is-block is-fullwidth is-primary is-medium is-rounded" onClick={addEvent}>Submit</button>
-                    {isCreated && <Redirect to="/" />}
-                  </div>
+                <div className="column is-4"></div>
             </div>
-          </div>
 
   )
 }

@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react'
 import UserContext from '../../context/UserContext';
-
+import axios from 'axios'
 
 const GoingButton = (props) => {
     const [going, setGoing] = useState(false)
@@ -30,9 +30,9 @@ const GoingButton = (props) => {
 
     return(
         <div>
-            <button className="button is-success" onClick={sendResponse}>Going</button>
+            <button className="button is-block is-fullwidth is-success is-medium" onClick={sendResponse}>Going</button>
         </div>
     )
 }
 
-export default RSVPButton
+export default GoingButton
