@@ -41,7 +41,11 @@ passport.use(new JwtStrategy(
             if (req && req.cookies["jwt"]) {
               token = req.cookies['jwt'];
             } else if (req && req.body.token) {
+              console.log(`Processing req with token: ${req.body.token}`);
               token = req.body.token;
+            } else if (req && req.query.token) {
+              console.log(`Processing req with token: ${req.query.token}`);
+              token = req.query.token;
             }
 
             return token;

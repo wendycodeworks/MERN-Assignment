@@ -3,6 +3,7 @@ const Logger = require("../helpers/logger");
 const requestLogger = (req, res, next) => {
   let message = "";
   switch (req.method) {
+    case "GET":
     case "POST":
       // ternary to check body is an empty object.
       const data =
