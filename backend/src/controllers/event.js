@@ -19,7 +19,7 @@ const show = async (req, res) => {
 }
 
 const create = async (req, res) => {
-  const { title, description, date, owner, latitude, longitude, contentType } = req.body;
+  const { title, description, date, owner, location, /* latitude, longitude, */ contentType } = req.body;
   let event = null;
   // if image doesnt exist, create event without one
   if (!req.file) {
@@ -28,20 +28,22 @@ const create = async (req, res) => {
          description: description,
          date: date,
          owner: owner,
-         location: {
+         /* location: {
            latitude: latitude,
            longitude: longitude
-         }
+         } */
+         location: location
        });
   } else {
     event = new Event({
       title: title,
       description: description,
       date: date,
-      location: {
+      /* location: {
            latitude: latitude,
            longitude: longitude
-      },
+      }, */
+      location: location,
       banner: {
       // by this time multer has already stored the file.
         data: fs.readFileSync(
@@ -70,7 +72,7 @@ const create = async (req, res) => {
 };
 
 const update = async (req, res) => {
-  const { owner, title, description, date, latitude, longitude } = req.body;
+  const { owner, title, description, date, location, /* latitude, longitude */ } = req.body;
   const event = await Event.findById(req.params.id);
 
   if (!event) {
@@ -80,8 +82,9 @@ const update = async (req, res) => {
       event.title = title;
       event.description = description;
       event.date = date;
-    event.location.latitude = latitude;
-    event.location.longitude = longitude;
+    // event.location.latitude = latitude;
+    // event.location.longitude = longitude;
+      event.location = location;
       event.save()
            .then((event) =>{
                new Logger("mongoose", `Updated event: ${req.params.id}`);
