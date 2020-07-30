@@ -13,7 +13,7 @@ const GoingButton = (props) => {
     function sendResponse(){
         if (userContext.token){
           axios.post(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}/attendee`, {
-              _id:`${props.eventId}`,
+               _id:`${props.eventId}`,
                attendee: userContext._id,
                token: userContext.token
           })

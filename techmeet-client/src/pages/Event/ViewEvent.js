@@ -100,7 +100,6 @@ const ViewEvent = (props) => {
                                             <p className="text">{event.location}</p>
                         </div>
                             <div className="tile is-child box">
-                                {eventButtons()}
                             </div>
                         <div className="tile is-child box"><GoogleMaps /></div>
                             <div className="tile is-child box">

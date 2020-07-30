@@ -63,14 +63,15 @@ const create = async (req, res) => {
 };
 
 const update = async (req, res) => {
-  const { title, description, date, location } = req.body;
+  const { owner, title, description, date, location } = req.body;
   const event = await Event.findById(req.params.id);
 
   if (!event) {
       new Logger("mongoose", `Cannot find event with id: ${req.params.id}`);
   } else {
+      event.owner = owner;
       event.title = title;
-      event.decription = description;
+      event.description = description;
       event.date = date;
       event.location = location;
       event.save()
