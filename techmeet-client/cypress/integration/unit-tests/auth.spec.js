@@ -6,15 +6,15 @@ context("Auth", () => {
     });
 
     it('can sign in', () => {
-        cy.get('.login > :nth-child(1) > .control > .input')
+        cy.get(':nth-child(2) > .control > .input')
           .click()
           .type("pls@work.com");
 
-        cy.get(':nth-child(2) > .control > .input')
+        cy.get(':nth-child(3) > .control > .input')
           .click()
           .type("password123");
 
-        cy.get('.login > .button')
+        cy.contains("Submit")
           .click();
 
         cy.on('window:alert', (str) => {
