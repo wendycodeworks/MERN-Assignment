@@ -2,7 +2,7 @@
 
 context("Auth", () => {
     beforeEach(() => {
-        cy.visit("http://localhost:3000/login");
+        cy.visit("https://upbeat-bartik-d32bf0.netlify.app/login");
 
         cy.get(':nth-child(2) > .control > .input')
           .click()
