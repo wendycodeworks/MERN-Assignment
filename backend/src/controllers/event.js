@@ -71,7 +71,7 @@ const update = async (req, res) => {
   } else {
       event.owner = owner;
       event.title = title;
-      event.decription = description;
+      event.description = description;
       event.date = date;
       event.location = location;
       event.save()
