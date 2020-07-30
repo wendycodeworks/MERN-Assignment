@@ -3,15 +3,17 @@ import 'bulma';
 import { Link } from "react-router-dom"
 import logo from "./assets/logo.png"
 import SearchBar from "./SearchBar.js"
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import UserContext from '../../context/UserContext';
 import AuthButtons from "./AuthButtons";
 import CreateEventButton from './CreateEventButton';
 
 
 const NavBar = () => {
-    
+    const [isActive, setIsActive] = useState(false)    
     const { userContext, setUserContext } = useContext(UserContext);
+
+
 
     return(
             <div>
@@ -30,17 +32,17 @@ const NavBar = () => {
                     </div>
                 </div>
 
-                    <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
+                    <a  onClick={() => {setIsActive(!isActive);}} role="button" className={`navbar-burger burger ${isActive ? "is-active" : ""}`} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
                     </a>
                 </div>
 
-                <div id="navbarBasicExample" className="navbar-menu">
+                <div className={`navbar-menu ${isActive ? "is-active" : ""}`}>
                     <div className="navbar-end">
                         <div className="navbar-item">
-                            <CreateEventButton />
+                        <CreateEventButton />
                         </div>
                     
                                              <div className="navbar-item has-dropdown is-hoverable">
