@@ -8,6 +8,7 @@ import Login from "./pages/User/Login.js"
 import Signup from "./pages/User/Signup.js"
 import UserContext from "./context/UserContext";
 import ViewEvents from './pages/Event/ViewEvents';
+import Footer from './pages/components/Footer';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,16 +21,17 @@ const App = () => {
       <div>
     <Router>
       <UserContext.Provider value={{ userContext, setUserContext }}>
-      <NavBar />
-        <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/new" component={AddEvent} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/event/:id" render={props => <ViewEvent eventId={props.match.params.id}/>}/>
-            <Route exact path="/events" component={ViewEvents}/>
-            <Route exact path="/signup" component={Signup}/>
-        </Switch>
-      </UserContext.Provider>
+        <NavBar />
+            <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route exact path="/new" component={AddEvent} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/event/:id" render={props => <ViewEvent eventId={props.match.params.id}/>}/>
+                <Route exact path="/events" component={ViewEvents}/>
+                <Route exact path="/signup" component={Signup}/>
+            </Switch>
+          </UserContext.Provider>
+        <Footer />
      </Router>
       </div>
     )
