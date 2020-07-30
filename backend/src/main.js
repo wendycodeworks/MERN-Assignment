@@ -36,12 +36,7 @@ app.use(expressSession({
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
-app.use(function (req, res, next) {
-
-    res.setHeader('Access-Control-Allow-Origin', '*');
-
-    next();
-});
+app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
