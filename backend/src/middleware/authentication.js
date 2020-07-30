@@ -9,7 +9,6 @@ const authRedirect = (req, res, next) => {
 
 const authorize = (req, res, next) => {
   if (!req.session && !req.session.user) {
-    // TODO
     return;
   }
 

@@ -21,6 +21,7 @@ const show = async (req, res) => {
 const create = async (req, res) => {
   const { title, description, date, location, owner, contentType } = req.body;
   let event = null;
+  // if image doesnt exist, create event without one
   if (!req.file) {
        event = new Event({
          title: title,
