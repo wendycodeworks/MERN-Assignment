@@ -30,13 +30,13 @@ Professionals and aspiring professionals from the tech industry
 
 ### R1.4 - Tech Stack
 
-#### Frontend
+#### Client
 
 - ReactJS: Frontend framework for building user interfaces.
 
 - Bulma: CSS framework.
 
-#### Backend
+#### Server
 
 - Node.js: JavaScript runtime environment.
 
@@ -57,6 +57,24 @@ Professionals and aspiring professionals from the tech industry
 - Github Project: Kanban board and project management tool.
 
 - Balsamiq: wireframing software. 
+
+### Libraries
+
+#### Client 
+
+- axios: 
+- bulma:
+- font-awesome:
+- react-datetime-picker:
+- react-spinners:
+
+#### Server
+
+- express: 
+- body-parser:
+- cookie-parser:
+- cors:
+- dotenv:
 
 ## R2 - Dataflow Diagram
 
@@ -174,42 +192,86 @@ After receiving the go-ahead, we started mapping out day one. We prioritised the
 ### Project management methodology
 On this project, we elected to use an Agile hybrid Kanban and Scrum approach. From Scrum, we borrowed daily sprint standups, sprint planning, and the sprint roles (discussed below). And from Kanban, we apply the practice of a visualised workflow, breaking down the project requirements into cards with subtasks. Being relatively flexible with the method prescription is another hallmark of Kanban. We work within a such structure that encourages self-organisation, independence; we integrate collaboration and consultation  where essential.
 
+#### During Implementation
+For implementation, continued with our strategy and applied a hybrid approach to the project. The client components and server components were developed relatively independently for the first week, with rapid prototyping techniques. The components reside within the same repository, so we employed a simple branching strategy to start - one for the clientside and one for the serverside - then with implementations, we added feature branches. Pull requests had to be raised and confirmed with the other team member before approval to merge to master. Merge conflicts were easily resolved with an ad-hoc consultation. The following week was reserved for bug triage, styling and deployment. Each component was tracked on the project Kanban that is linked to the repository.  
+
 ### Delegation
 We gravitated to very loose approach to delegation; as a team of two, we decided which task to accept and confirmed with eachother. The tasks are ranked by complexity, priority and if there were any dependencies. Each task had an 'owner'; reminiscent of the product owner role in a sprint. The task owner is also the 'development team' (it's just one of us), creating the first draft or iteration. The draft or iteration is reviewed by  prior to addition to the master.
 
-### Project progression
+#### During Implementation
+The project was split into client and server side; Morgan was assigned the server component and Wendy was assigned the client component. Both components were broken down into an MVC pattern to develop the MVP and consequently into sub tasks. Like the previous part of the project, each component was treated as a 'mini-project' and each team member 'owned' their respective components, being ultimately responsible for it's delivery.  
 
-<details open>
+### Project Planning 
+
+<details>
 <summary> Day 1</summary>
 
 ![day-1](./docs/project-progression/day-1-start.png)
 
 </details>
 
-<details open>
+<details>
 <summary> Day 2</summary>
 
 ![day-2](./docs/project-progression/day-2-start.png)
 
 </details>
 
-<details open>
+<details>
 <summary> Day 3</summary>
 
 ![day-3](./docs/project-progression/day-3-start.png)
 
 </details>
 
-<details open>
+<details>
 <summary> Day 4</summary>
 
 ![day-4](./docs/project-progression/day-4-start.png)
 
 </details>
 
-<details open>
+<details>
 <summary> Day 5</summary>
 
 ![day-5](./docs/project-progression/day-5-start.png)
+
+</details>
+
+### Project Implementation
+
+<details open>
+<summary> Week 1</summary>
+
+![week-1](./docs/project-progression/Week-1-end.png)
+
+</details>
+
+<details open>
+<summary> Week 2 - Day 1</summary>
+
+![week-2-day-1](./docs/project-progression/Week-2-D1-end.png)
+
+
+</details>
+
+<details open>
+<summary> Week 2 - Day 2</summary>
+
+![week-2-day-2](./docs/project-progression/Week-2-D2-end.png)
+
+</details>
+
+<details open>
+<summary> Week 2 - Day 3</summary>
+
+![week-2-day-3](./docs/project-progression/Week-2-D3-end.png)
+
+</details>
+
+<details open>
+<summary> Week 2 - Day 4</summary>
+
+![week-2-day-4](./docs/project-progression/Week-2-D4-end.png)
 
 </details>
