@@ -65,15 +65,15 @@ Professionals and aspiring professionals from the tech industry
 
 #### Client 
 
-- axios: 
-- bulma:
-- font-awesome:
-- react-datetime-picker:
-- react-spinners:
+- axios: a promise based HTTP client for Node.js and browser. Applied in project to consume REST APIs for CRUD functions.
+- bulma: a CSS framework based on Flexbox and built with Sass. Is reponsive and modular - provides styling for hero components, typography cards, buttons, navbar and footer.
+- font-awesome: an icon library, used sparingly in this project
+- react-datetime-picker: generates a calendar to select date and time, and submits as form-data
+- react-spinners: a collection of load spinners, Ring Loader applied only
 
 #### Server
 
-- express: 
+- express: a Node webframework, employed in this project to handle requests with various HTTP verbs, and house request processing middleware.
 - body-parser:
 - cookie-parser:
 - cors:
