@@ -25,6 +25,7 @@ const Login = () => {
                 })
                 alert("You're logged in and ready to go!")
                 setIsLoggedIn(true)
+                console.log(userContext)
             }) 
              
             .catch((error) => {
@@ -37,10 +38,12 @@ const Login = () => {
 
     return( 
             <div>
-             <div className="hero is-fullheight">
-                <div className="hero-body has-text-centered">
-                    <div className="login">
+                <div className="columns is-mobile">
+                    <div className="column is-4"></div>
+                        <div className="column is-4 has-text-centered mt-6">
+                        
                         {errorMessage}
+                        <h1 className="title">Login</h1>
                  
                             <div className="field">
                                 <div className="control">
@@ -63,15 +66,14 @@ const Login = () => {
                                 </div>
                             </div>
                         <br />
-                            <button className="button is-block is-fullwidth is-primary is-medium is-rounded" onClick={login}>
-                            Login
+                            <button className="button is-block is-fullwidth is-info is-medium is-rounded" onClick={login}>
+                                Submit
                             </button>
                             {isLoggedIn && <Redirect to="/" />}
-
-                    </div>
-                </div>
-                </div>   
+                        </div>
+                    <div className="column is-4"></div>                    
             </div>
+        </div>
         )
 }
 
