@@ -4,6 +4,7 @@ import {Redirect} from 'react-dom';
 import 'bulma'
 import UserContext from "../../context/UserContext";
 import DateTimePicker from "react-datetime-picker";
+import Autocomplete from "react-google-autocomplete";
 
 const AddEvent = () => {
 
@@ -21,9 +22,10 @@ const AddEvent = () => {
           title: eventTitle,
           description: eventDescription,
           date: dateTime,
-          location: eventLocation,
           token: userContext.token,
-          owner: userContext._id
+          owner: userContext._id,
+          latitude: eventLocation.geometry.location.lat,
+          longitude: eventLocation.geometry.location.lng
       })
       .then((res) => {
         alert("Great success!")
@@ -76,34 +78,15 @@ const AddEvent = () => {
 
                     <div className="field">
                       <label className="label">Location</label>
-                      <input
-                        type="text"
-                        className="input"
-                        placeholder="Enter location"
-                        name="location"
-                        value={eventLocation}
-                        onChange={e => setEventLocation(e.target.value)}
+                      <Autocomplete
+                        apiKey={"AIzaSyDMvUjLl8yiltFAdxUHzFVJxW0sGt1rEVI"}
+                        style={{width: '90%'}}
+                        onPlaceSelected={(place) => setEventLocation(place)}
+                        types={['(regions)']}
+                        componentRestrictions={{country: "au"}}
                       />
                     </div>
 
-                      <div className="field">
-                        <div className="label">Event Banner</div>
-                        <label>
-                          <input className="file-input" type="file" placeholder="Upload event banner"
-                            name="banner"
-                            accept="image/*"
-                            value={eventBanner}
-                            onChange={e => setEventBanner(e.target.value)}/>
-                              <span className="file-cta">
-                            <span className="file-icon">
-                              <i className="fa fa-upload"></i>
-                            </span>
-                            <span className="file-label">
-                              Choose a file…
-                            </span>
-                          </span>
-                        </label>
-                      </div>
                       <button className="button is-primary is-fullwidth is-medium is-rounded my-5" onClick={addEvent}>Submit</button>
                       {isCreated && <Redirect to="/" />}
                     </div>
