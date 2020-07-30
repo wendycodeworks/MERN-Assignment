@@ -3,6 +3,8 @@ import axios from 'axios'
 import GoogleMaps from '../components/GoogleMaps'
 import UserContext from '../../context/UserContext'
 import GoingButton from '../components/GoingButton'
+import { Link } from 'react-router-dom'
+
 
 const ViewEvent = (props) => {
     const [event, setEvent] = useState([])
@@ -73,6 +75,9 @@ const ViewEvent = (props) => {
             <div className="tile is-parent is-vertical">
                             <div className="tile is-child is-8 box">
                                 <p className="title">{event.title}</p>
+                                </div>
+                                <div className="tile is-child">
+                                    <Link className="button is-warning" to={`${props.eventId}/edit`}> Edit Event</Link>
                                 </div>
                 </div>
            </div>

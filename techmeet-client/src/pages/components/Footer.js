@@ -13,7 +13,9 @@ const Footer = () => {
                         </div>
                             <div className="column is-2"></div>
                         <div className="column is-3">
-                        
+                            <p>FAQ</p>
+                            <p>Guides</p>
+                            <p>News</p>
                         </div>
                     <div className="column is-2"></div>
                 </div>

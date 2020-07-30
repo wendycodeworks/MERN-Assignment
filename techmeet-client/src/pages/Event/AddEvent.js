@@ -86,24 +86,25 @@ const AddEvent = () => {
                       />
                     </div>
 
-                      <div className="field">
-                        <div className="label">Event Banner</div>
-                        <label>
-                          <input className="file-input" type="file" placeholder="Upload event banner"
-                            name="banner"
-                            accept="image/*"
-                            value={eventBanner}
-                            onChange={e => setEventBanner(e.target.value)}/>
-                              <span className="file-cta">
-                            <span className="file-icon">
-                              <i className="fa fa-upload"></i>
+                    <div class="field">
+                    <label className="label">Event Banner</label>
+                        <label class="file-label">
+                          <input class="file-input" type="file" 
+                          name="banner"
+                          accept="image/*"
+                          value={eventBanner}
+                          onChange={e => setEventBanner(e.target.value)}/>
+                          <span class="file-cta">
+                            <span class="file-icon">
+                              <i class="fa fa-upload"></i>
                             </span>
-                            <span className="file-label">
+                            <span class="file-label">
                               Choose a file…
                             </span>
                           </span>
                         </label>
                       </div>
+              
                       <button className="button is-primary is-fullwidth is-medium is-rounded my-5" onClick={addEvent}>Submit</button>
                       {isCreated && <Redirect to="/" />}
                     </div>
