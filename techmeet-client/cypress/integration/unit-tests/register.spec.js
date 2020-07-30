@@ -2,7 +2,7 @@
 
 context("Register", () => {
     beforeEach(() => {
-        cy.visit("http://localhost:3000/signup");
+        cy.visit("https://upbeat-bartik-d32bf0.netlify.app/login");
     });
 
     it('can create an account', () => {

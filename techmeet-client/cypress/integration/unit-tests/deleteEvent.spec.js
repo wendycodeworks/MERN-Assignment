@@ -2,7 +2,7 @@
 
 context("EventDelete", () => {
     beforeEach(() => {
-        cy.visit("http://localhost:3000/login");
+        cy.visit("https://upbeat-bartik-d32bf0.netlify.app/login");
 
         // login
         cy.get(':nth-child(2) > .control > .input')
