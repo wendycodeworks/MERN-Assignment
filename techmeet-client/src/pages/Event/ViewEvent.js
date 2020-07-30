@@ -20,7 +20,6 @@ const ViewEvent = (props) => {
                 setErrorMessage("There was a problem, please refresh and try again")
                 setIsLoading(false)
             })
-        alert(userContext.token);
         axios.get("https://shrouded-refuge-96179.herokuapp.com/user", {
             params: {
                 token: userContext.token
