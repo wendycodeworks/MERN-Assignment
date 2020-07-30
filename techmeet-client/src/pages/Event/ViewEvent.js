@@ -59,18 +59,20 @@ const ViewEvent = (props) => {
     }
 
     function eventButtons(){
-
         if (userContext._id === event.owner) {
             return(
-                <Link className="button is-block is-fullwidth is-warning is-medium" to={`/event/${props.eventId}/edit`}>Edit Techmeet</Link>
+                <Link className="button is-block is-fullwidth is-warning is-medium" to={`/event/${props.eventId}/edit`}>
+                    Edit Techmeet
+                </Link>
             )
         } else {
             return(
                 <GoingButton eventId={`${props.eventId}`}/>
             )
         }
-    
-}
+    }
+
+
 
     return (
        <div className="container is-half mt-6 is-block-mobile">
@@ -102,7 +104,7 @@ const ViewEvent = (props) => {
                             <div className="tile is-child box">
                                 {eventButtons()}
                             </div>
-                        <div className="tile is-child box"><GoogleMaps /></div>
+                        {/* <div className="tile is-child box"><GoogleMaps /></div> */}
                             <div className="tile is-child box">
                                 <p className="title">Attendees</p>
                               {renderAttendees()}

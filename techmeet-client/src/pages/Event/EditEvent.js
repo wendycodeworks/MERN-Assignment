@@ -128,7 +128,7 @@ const EditEvent = (props) => {
                             </div>
                             <div className="buttons">
                             <button className="button is-primary is-fullwidth is-medium is-rounded my-5" onClick={editEvent}>Submit</button>
-                            {isEdited && <Redirect to="/events" />}
+                            {isEdited}
                             <DeleteEvent eventId={`${props.eventId}`}/>
                             </div>
                           </div>
