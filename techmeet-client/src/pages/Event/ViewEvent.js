@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import GoogleMaps from '../components/GoogleMaps'
-import AttendeesList from '../components/AttendeesList';
 
 const ViewEvent = (props) => {
     const [event, setEvent] = useState([])
