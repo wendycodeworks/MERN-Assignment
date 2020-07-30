@@ -19,13 +19,15 @@ const AddEvent = () => {
   function addEvent(){
     if (eventTitle && eventDescription && dateTime && eventLocation){
       axios.post(`https://shrouded-refuge-96179.herokuapp.com/event`, {
+          headers: { 'Context-Type': 'application/json' },
           title: eventTitle,
           description: eventDescription,
           date: dateTime,
           token: userContext.token,
           owner: userContext._id,
-          latitude: eventLocation.geometry.location.lat,
-          longitude: eventLocation.geometry.location.lng
+          location: eventLocation
+         // latitude: eventLocation.geometry.location.lat,
+         // longitude: eventLocation.geometry.location.lng
       })
       .then((res) => {
         alert("Great success!")
@@ -78,12 +80,13 @@ const AddEvent = () => {
 
                     <div className="field">
                       <label className="label">Location</label>
-                      <Autocomplete
-                        apiKey={"AIzaSyDMvUjLl8yiltFAdxUHzFVJxW0sGt1rEVI"}
-                        style={{width: '90%'}}
-                        onPlaceSelected={(place) => setEventLocation(place)}
-                        types={['(regions)']}
-                        componentRestrictions={{country: "au"}}
+                      <input
+                        type="text"
+                        className="input"
+                        placeholder="Enter location"
+                        name="location"
+                        value={eventLocation}
+                        onChange={e => setEventLocation(e.target.value)}
                       />
                     </div>
 
