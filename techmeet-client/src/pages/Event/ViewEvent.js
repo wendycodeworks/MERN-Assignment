@@ -104,7 +104,11 @@ const ViewEvent = (props) => {
                             <div className="tile is-child box">
                                 {eventButtons()}
                             </div>
-                        {/* <div className="tile is-child box"><GoogleMaps /></div> */}
+                      <div className="tile is-child box"><GoogleMaps // location={ {
+                          //latitude: event.location.latitude,
+                          //longitude: event.location.longitude
+                      // } }
+                          /></div>
                             <div className="tile is-child box">
                                 <p className="title">Attendees</p>
                               {renderAttendees()}
