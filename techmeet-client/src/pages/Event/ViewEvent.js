@@ -20,23 +20,22 @@ const ViewEvent = (props) => {
                 setErrorMessage("There was a problem, please refresh and try again")
                 setIsLoading(false)
             })
+        alert(userContext.token);
+        axios.get("https://shrouded-refuge-96179.herokuapp.com/user", {
+            params: {
+                token: userContext.token
+            }
+        })
+             .then((res) => {
+                 setIsLoading(false);
+                 setUsers(res.data)
+             })
+             .catch(e => {
+                 setErrorMessage("There was a problem, please refresh and try again");
+                 setIsLoading(false);
+             })
     }, [])
 
-    useEffect(() => {
-        axios.get(`https://shrouded-refuge-96179.herokuapp.com/user`, {
-            token: userContext.token
-        })
-            .then(res => {
-                setIsLoading(false)
-                setUsers(res.data)
-                console.log(res.data)
-            })
-            .catch(e => {
-                setErrorMessage("There was a problem, please refresh and try again")
-                setIsLoading(false)
-            })
-    }, [])
-    
     // function renderAttendees() {
     //     if(event.attendees) {
     //      return(
@@ -52,16 +51,19 @@ const ViewEvent = (props) => {
     // }
 
     function renderAttendees() {
-        if (event.attendees) {
-            // for each attendee
-            event.attendees.map((attendee) => {
-                if (attendee === users._id) {
-                    return <li>{users.firstName}</li>
-                }
-            }) 
+        if (event.attendees && users) {
+           let names = new Array;
+            event.attendees.forEach((attendee) => {
+                users.forEach((user) => {
+                    if (user._id === attendee) {
+                        names.push(`${user.firstName} ${user.lastName}`);
+                    }
+                });
+            });
 
-            // match attendee id to user id
-            // render matched user first and last name
+            return names.map((name) => {
+                return <li> { name } </li>
+            });
         }
     }
 // Get list of user ids
