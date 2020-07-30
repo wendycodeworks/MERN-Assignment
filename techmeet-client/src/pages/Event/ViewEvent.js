@@ -21,16 +21,18 @@ const ViewEvent = (props) => {
     }, [])
 
     
-    function renderAttendees(){
-        return(
-            <>
-              {/* {event.attendees.map((attendee, index) => (
-                  <AttendeesList key={event._id} attendee={attendee} index={index} />
-              ))} */}
-
-              {console.log(event.attendees)}
-            </>
-        )
+    function renderAttendees() {
+        if(event.attendees) {
+         return(
+            <ol>
+              {
+                  event.attendees.map((attendee) => {
+                      return <li>{ attendee }</li>
+                  })
+              }
+            </ol>
+         );
+        }
     }
 
 
@@ -63,7 +65,7 @@ const ViewEvent = (props) => {
                         <div className="tile is-child box"><GoogleMaps /></div>
                             <div className="tile is-child box">
                                 <p className="title">Attendees</p>
-                                {renderAttendees()}
+                              {renderAttendees()}
                                    
                         </div>
                     </div>
