@@ -33,7 +33,7 @@ const GoingButton = (props) => {
     return(
         <div>
             <button className="button is-block is-fullwidth is-success is-medium" onClick={sendResponse}>Going</button>
-            {going && <Redirect to="/events"/>}
+            {going && <Redirect to={`/event/${props.eventId}`}/>}
         </div>
     )
 }
