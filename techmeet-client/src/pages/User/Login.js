@@ -38,9 +38,9 @@ const Login = () => {
 
     return( 
             <div>
-                <div className="columns is-mobile">
+                <div className="columns is-mobile my-6">
                     <div className="column is-4"></div>
-                        <div className="column is-4 has-text-centered mt-6">
+                        <div className="column is-4 has-text-centered my-6">
                         
                         {errorMessage}
                         <h1 className="title">Login</h1>

@@ -18,7 +18,7 @@ class HomePage extends Component {
                             Events near you
                         </h1>
                             <h2 className="subtitle">
-                                Your local tech ecosystem at your figure tips
+                                Your local tech ecosystem at your finger tips
                             </h2>
                             <BrowseButton />
                     </div>                    
