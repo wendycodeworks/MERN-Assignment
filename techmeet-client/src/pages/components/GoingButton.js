@@ -1,10 +1,10 @@
 import React, {useState, useContext} from 'react'
+import { Redirect } from 'react-router-dom'
 import UserContext from '../../context/UserContext';
 import axios from 'axios'
 
 const GoingButton = (props) => {
     const [going, setGoing] = useState(false)
-    const [errorMessage, setErrorMessage] = useState("")
     const { userContext, setUserContext } = useContext(UserContext);
 
     // Need to pull in userId from session or login 
@@ -17,7 +17,8 @@ const GoingButton = (props) => {
                token: userContext.token
           })
           .then((res) => {
-            alert("Great success!")
+            alert("Great success! You're on the attendees list" )
+            setGoing(true)
             console.log(res)
           }) .catch((error) => {
             console.log(error)
@@ -32,6 +33,7 @@ const GoingButton = (props) => {
     return(
         <div>
             <button className="button is-block is-fullwidth is-success is-medium" onClick={sendResponse}>Going</button>
+            {going && <Redirect to={`/event/${props.eventId}`}/>}
         </div>
     )
 }

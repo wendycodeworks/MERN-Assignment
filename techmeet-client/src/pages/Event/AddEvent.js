@@ -30,7 +30,7 @@ const AddEvent = () => {
          // longitude: eventLocation.geometry.location.lng
       })
       .then((res) => {
-        alert("Great success!")
+        alert("Great success! Your Techmeet is up!")
         console.log(res)
       }) .catch((error) => {
         console.log(error)
