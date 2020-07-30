@@ -1,11 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import axios from 'axios'
 import GoogleMaps from '../components/GoogleMaps'
+import UserContext from '../../context/UserContext'
 
 const ViewEvent = (props) => {
     const [event, setEvent] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [errorMessage, setErrorMessage] = useState("")
+    const [users, setUsers] = useState("")
+    const { userContext, setUserContext } = useContext(UserContext);
 
     useEffect(() => {
         axios.get(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}`)
@@ -19,20 +22,52 @@ const ViewEvent = (props) => {
             })
     }, [])
 
+    useEffect(() => {
+        axios.get(`https://shrouded-refuge-96179.herokuapp.com/user`, {
+            token: userContext.token
+        })
+            .then(res => {
+                setIsLoading(false)
+                setUsers(res.data)
+                console.log(res.data)
+            })
+            .catch(e => {
+                setErrorMessage("There was a problem, please refresh and try again")
+                setIsLoading(false)
+            })
+    }, [])
     
+    // function renderAttendees() {
+    //     if(event.attendees) {
+    //      return(
+    //         <ol>
+    //           {
+    //               event.attendees.map((attendee) => {
+    //                   return <li className="ml-4">{ attendee }</li>
+    //               })
+    //           }
+    //         </ol>
+    //      );
+    //     }
+    // }
+
     function renderAttendees() {
-        if(event.attendees) {
-         return(
-            <ol>
-              {
-                  event.attendees.map((attendee) => {
-                      return <li className="ml-4">{ attendee }</li>
-                  })
-              }
-            </ol>
-         );
+        if (event.attendees) {
+            // for each attendee
+            event.attendees.map((attendee) => {
+                if (attendee === users._id) {
+                    return <li>{users.firstName}</li>
+                }
+            }) 
+
+            // match attendee id to user id
+            // render matched user first and last name
         }
     }
+// Get list of user ids
+// Pass each user id through get request
+// Store each result in array
+// Render array
 
 
 
