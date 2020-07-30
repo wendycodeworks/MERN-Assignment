@@ -30,7 +30,6 @@ const Signup = () => {
                     user: res.data.firstName,
                     _id: res.data._id
                 });
-                console.log(userContext)
             }) .catch((error) => {
               console.log(error)
             })

@@ -25,7 +25,7 @@ const App = () => {
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/new" component={AddEvent} />
                 <Route exact path="/login" component={Login} />
-                <Route exact path="/event/:id" render={props => <ViewEvent eventId={props.match.params.id}/>}/>
+                <Route exact path="/event/:id" component={props => <ViewEvent eventId={props.match.params.id} userContext={UserContext}/>}/>
                 <Route exact path="/events" component={ViewEvents}/>
                 <Route exact path="/signup" component={Signup}/>
             </Switch>
