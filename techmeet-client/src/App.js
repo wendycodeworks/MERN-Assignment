@@ -9,6 +9,7 @@ import Signup from "./pages/User/Signup.js"
 import UserContext from "./context/UserContext";
 import ViewEvents from './pages/Event/ViewEvents';
 import Footer from './pages/components/Footer';
+import LoadSpinner from './pages/components/LoadSpinner';
 
 const App = () => {
   const [userContext, setUserContext] = useState({
@@ -28,6 +29,7 @@ const App = () => {
                 <Route exact path="/event/:id" component={props => <ViewEvent eventId={props.match.params.id} userContext={UserContext}/>}/>
                 <Route exact path="/events" component={ViewEvents}/>
                 <Route exact path="/signup" component={Signup}/>
+                <Route exact path="/loading" component={LoadSpinner}/>
             </Switch>
           </UserContext.Provider>
         <Footer />

@@ -2,6 +2,7 @@ import React, {useEffect, useState, useContext} from 'react';
 import axios from 'axios'
 import GoogleMaps from '../components/GoogleMaps'
 import UserContext from '../../context/UserContext'
+import GoingButton from '../components/GoingButton'
 
 const ViewEvent = (props) => {
     const [event, setEvent] = useState([])
@@ -64,15 +65,9 @@ const ViewEvent = (props) => {
             // render matched user first and last name
         }
     }
-// Get list of user ids
-// Pass each user id through get request
-// Store each result in array
-// Render array
-
-
 
     return (
-       <div className="container is-half mt-6">
+       <div className="container is-half mt-6 is-block-mobile">
            <div className="tile is-ancestor">
             <div className="tile is-parent is-vertical">
                             <div className="tile is-child is-8 box">
@@ -96,6 +91,9 @@ const ViewEvent = (props) => {
                                         <p className="title is-5">Location</p>
                                             <p className="text">{event.location}</p>
                         </div>
+                            <div className="tile is-child box">
+                                <GoingButton />
+                            </div>
                         <div className="tile is-child box"><GoogleMaps /></div>
                             <div className="tile is-child box">
                                 <p className="title">Attendees</p>
