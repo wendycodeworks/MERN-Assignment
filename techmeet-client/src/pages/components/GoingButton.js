@@ -10,10 +10,11 @@ const GoingButton = (props) => {
     // Need to pull in userId from session or login 
 
     function sendResponse(){
-        if (UserContext.token){
-          axios.put(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}/attendees`, {
-              _id:`${props.eventId}/`,
-               attendee: userContext._id
+        if (userContext.token){
+          axios.post(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}/attendee`, {
+               _id:`${props.eventId}`,
+               attendee: userContext._id,
+               token: userContext.token
           })
           .then((res) => {
             alert("Great success!")

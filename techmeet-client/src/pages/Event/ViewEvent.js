@@ -93,7 +93,7 @@ const ViewEvent = (props) => {
                                             <p className="text">{event.location}</p>
                         </div>
                             <div className="tile is-child box">
-                                <GoingButton />
+                              <GoingButton eventId={ event._id }/>
                             </div>
                         <div className="tile is-child box"><GoogleMaps /></div>
                             <div className="tile is-child box">
