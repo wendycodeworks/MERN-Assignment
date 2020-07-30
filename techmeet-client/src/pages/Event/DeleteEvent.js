@@ -1,10 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 const DeleteEvent = (props) => {
     const {userContext} = useContext(UserContext)
+    const [deleted, setDeleted] = useState(false)
 
     function deleteEvent() {
         if (userContext.token) {
@@ -15,6 +17,7 @@ const DeleteEvent = (props) => {
             })
             .then(() => {
                 alert("Event deleted :(")
+                setDeleted(true)
               })
             } else {
               alert("Something went wrong, please try again!")
@@ -23,7 +26,10 @@ const DeleteEvent = (props) => {
         }
 
     return (
-    <button className="button is-danger is-medium" onClick={deleteEvent}> Delete </button>
+        <div>
+             <button className="button is-danger is-medium" onClick={deleteEvent}> Delete </button>
+                {deleted && <Redirect to="/events"/>}
+        </div>
     )
 }
 
