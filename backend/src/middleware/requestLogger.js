@@ -11,7 +11,6 @@ const requestLogger = (req, res, next) => {
       message =
         `Received ${req.method} request at` + `'${req.originalUrl}'\n` + data;
       new Logger("request-logger", message);
-      break;
 
   next();
 };
