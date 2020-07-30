@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react'
+import { Redirect } from 'react-router-dom'
 import UserContext from '../../context/UserContext';
 import axios from 'axios'
 
@@ -32,6 +33,7 @@ const GoingButton = (props) => {
     return(
         <div>
             <button className="button is-block is-fullwidth is-success is-medium" onClick={sendResponse}>Going</button>
+            <Redirect to='/events'/>
         </div>
     )
 }
