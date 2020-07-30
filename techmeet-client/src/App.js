@@ -30,7 +30,6 @@ const App = () => {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/event/:id" component={props => <ViewEvent eventId={props.match.params.id} userContext={UserContext}/>}/>
                 <Route exact path="/event/:id/edit" component={props => <EditEvent eventId={props.match.params.id} userContext={UserContext}/>} />
-                <Route exact path="/event/:id/delete" component={props => <DeleteEvent eventId={props.match.params.id} userContext={UserContext}/>}/>
                 <Route exact path="/events" component={ViewEvents}/>
                 <Route exact path="/signup" component={Signup}/>
                 <Route exact path="/loading" component={LoadSpinner}/>
