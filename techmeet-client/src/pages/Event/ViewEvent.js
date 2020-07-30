@@ -4,6 +4,7 @@ import GoogleMaps from '../components/GoogleMaps'
 import UserContext from '../../context/UserContext'
 import GoingButton from '../components/GoingButton'
 import { Link } from 'react-router-dom'
+import EditEvent from './EditEvent';
 
 
 const ViewEvent = (props) => {
@@ -18,6 +19,7 @@ const ViewEvent = (props) => {
             .then(res => {
                 setIsLoading(false)
                 setEvent(res.data)
+                console.log(res.data)
             })
             .catch(e => {
                 setErrorMessage("There was a problem, please refresh and try again")
@@ -38,19 +40,6 @@ const ViewEvent = (props) => {
              })
     }, [])
 
-    // function renderAttendees() {
-    //     if(event.attendees) {
-    //      return(
-    //         <ol>
-    //           {
-    //               event.attendees.map((attendee) => {
-    //                   return <li className="ml-4">{ attendee }</li>
-    //               })
-    //           }
-    //         </ol>
-    //      );
-    //     }
-    // }
 
     function renderAttendees() {
         if (event.attendees && users) {
@@ -69,6 +58,20 @@ const ViewEvent = (props) => {
         }
     }
 
+    function eventButtons(){
+
+        if (userContext._id === event.owner) {
+            return(
+                <Link className="button is-block is-fullwidth is-warning is-medium" to={`/event/${props.eventId}/edit`}>Edit Techmeet</Link>
+            )
+        } else {
+            return(
+                <GoingButton eventId={`${props.eventId}`}/>
+            )
+        }
+    
+}
+
     return (
        <div className="container is-half mt-6 is-block-mobile">
            <div className="tile is-ancestor">
@@ -77,7 +80,6 @@ const ViewEvent = (props) => {
                                 <p className="title">{event.title}</p>
                                 </div>
                                 <div className="tile is-child">
-                                    <Link className="button is-warning" to={`${props.eventId}/edit`}> Edit Event</Link>
                                 </div>
                 </div>
            </div>
@@ -98,7 +100,7 @@ const ViewEvent = (props) => {
                                             <p className="text">{event.location}</p>
                         </div>
                             <div className="tile is-child box">
-                                <GoingButton />
+                                {eventButtons()}
                             </div>
                         <div className="tile is-child box"><GoogleMaps /></div>
                             <div className="tile is-child box">

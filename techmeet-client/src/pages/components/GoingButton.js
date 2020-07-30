@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react'
+import { Redirect } from 'react-router-dom'
 import UserContext from '../../context/UserContext';
 import axios from 'axios'
 
@@ -11,9 +12,10 @@ const GoingButton = (props) => {
 
     function sendResponse(){
         if (userContext.token){
-          axios.put(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}/attendee`, {
+          axios.post(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}/attendee`, {
               _id:`${props.eventId}`,
-               attendee: userContext._id
+               attendee: userContext._id,
+               token: userContext.token
           })
           .then((res) => {
             alert("Great success!")
@@ -31,6 +33,7 @@ const GoingButton = (props) => {
     return(
         <div>
             <button className="button is-block is-fullwidth is-success is-medium" onClick={sendResponse}>Going</button>
+            <Redirect to='/events'/>
         </div>
     )
 }

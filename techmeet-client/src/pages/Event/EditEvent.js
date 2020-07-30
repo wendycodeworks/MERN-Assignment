@@ -3,6 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios'
 import DateTimePicker from "react-datetime-picker"
 import UserContext from '../../context/UserContext';
+import DeleteEvent from './DeleteEvent';
 
 const EditEvent = (props) => {
     const [eventTitle, setEventTitle] = useState("")
@@ -10,9 +11,9 @@ const EditEvent = (props) => {
     const [eventDateTime, setEventDateTime] = useState("")
     const [eventLocation, setEventLocation] = useState("")
     const [eventBanner, setEventBanner] = useState("")
+    const [eventOwner, setEventOwner] = useState("")
     const [isEdited, setIsEdited] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
-    const [successMessage, setSuccessMessage] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
     const {userContext, setUserContext} = useContext(UserContext)
 
@@ -20,12 +21,12 @@ const EditEvent = (props) => {
         axios.get(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}`)
         .then(res => {
             setIsLoading(false)
-
             setEventTitle(res.data.title)
             setEventDescription(res.data.description)
             setEventDateTime(res.data.date)
             setEventLocation(res.data.location)
             setEventBanner(res.data.banner)
+            setEventOwner(res.data.owner)
         })
         .catch(e => {
             setErrorMessage("There was a problem, please refresh and try again")
@@ -36,17 +37,19 @@ const EditEvent = (props) => {
     function editEvent(){
         if (eventTitle && eventDescription && eventDateTime && eventLocation){
             axios.put(`https://shrouded-refuge-96179.herokuapp.com/event/${props.eventId}`, {
-              event: {
+          
                 title: eventTitle,
                 description: eventDescription,
                 date: eventDateTime,
                 location: eventLocation, 
                 banner: eventBanner,
-                owner: userContext.token
-              }
+                owner: eventOwner,
+                token: userContext.token
             })
-            .then(() => setIsEdited(true))
-            .then(() => setSuccessMessage("Yay! Event updated!"))
+            .then(() => {
+              setIsEdited(true)
+              alert("Yay! Event updated!")
+            })
           } else {
             setErrorMessage("Required values!")
           }
@@ -105,26 +108,29 @@ const EditEvent = (props) => {
                           </div>
 
                             
-                          <div class="field">
+                          <div className="field">
                               <label className="label">Event Banner</label>
-                                <label class="file-label">
-                                  <input class="file-input" type="file" 
+                                <label className="file-label">
+                                  <input className="file-input" type="file" 
                                   name="banner"
                                   accept="image/*"
                                   value={eventBanner}
                                   onChange={e => setEventBanner(e.target.value)}/>
-                                  <span class="file-cta">
-                                    <span class="file-icon">
-                                      <i class="fa fa-upload"></i>
+                                  <span className="file-cta">
+                                    <span className="file-icon">
+                                      <i className="fa fa-upload"></i>
                                     </span>
-                                    <span class="file-label">
+                                    <span className="file-label">
                                       Choose a file…
                                     </span>
                                   </span>
                                 </label>
                             </div>
+                            <div className="buttons">
                             <button className="button is-primary is-fullwidth is-medium is-rounded my-5" onClick={editEvent}>Submit</button>
-                            {isEdited && successMessage && <Redirect to="/" />}
+                            {isEdited && <Redirect to="/events" />}
+                            <DeleteEvent eventId={`${props.eventId}`}/>
+                            </div>
                           </div>
                         </div>
                       <div className="column is-4"></div>
