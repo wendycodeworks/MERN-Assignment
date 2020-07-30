@@ -1,6 +1,7 @@
 # T3A2 - MERN Application
 
 https://techmeet.netlify.app
+https://github.com/wendycodeworks/MERN-Assignment/
 
 Created by Wendy and Morgan
 
