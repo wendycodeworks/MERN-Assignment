@@ -74,10 +74,11 @@ Professionals and aspiring professionals from the tech industry
 #### Server
 
 - express: a Node webframework, employed in this project to handle requests with various HTTP verbs, and house request processing middleware.
-- body-parser:
-- cookie-parser:
-- cors:
-- dotenv:
+- body-parser: a middleware module that extracts body data from an HTTP Post request, deployed to create entities and authentication within the project.
+- cookie-parser: a middleware module that allows access to the header of a request or response. 
+- cors: a Node package allowing web application permissions to access resources from one origin to another domain.
+- dotenv: a Node package that allows access to an .env file and loads the content.
+- passport: an Express-friendly, authentication middleware allowing for authentication with an email and password.
 
 ## R2 - Dataflow Diagram
 
