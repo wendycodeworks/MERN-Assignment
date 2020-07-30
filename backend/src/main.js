@@ -35,7 +35,9 @@ app.use(expressSession({
   },
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
+
 app.use(cors());
+
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());

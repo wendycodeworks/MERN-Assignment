@@ -14,8 +14,14 @@ const eventSchema = new mongoose.Schema({
         required: true
     },
     location: {
-        type: String,
-        required: true
+        latitude: {
+            type: Number,
+            required: true
+        },
+        longitude: {
+            type: Number,
+            required: true
+        }
     },
     banner: {
       data: Buffer,

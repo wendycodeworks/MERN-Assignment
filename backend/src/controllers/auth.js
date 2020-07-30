@@ -2,6 +2,7 @@ const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const Logger = require("../helpers/logger");
 
+// create user
 const register = async (req, res) => {
   const { firstName, lastName, email, phoneNumber, password } = req.body;
   const user = new User({
@@ -44,20 +45,24 @@ const register = async (req, res) => {
     });
 };
 
+// logout user
 const logout = async (req, res, next) => {
     req.logout();
-  res.cookie("jwt", null, { maxAge: -1 });
+    // destroy cookie
+    res.cookie("jwt", null, { maxAge: -1 });
     res.redirect("/login");
 }
 
+// login user
 const login = async (req, res, next) => {
     const token = jwt.sign({ sub: req.user._id }, process.env.JWT_SECRET);
-  res.cookie("jwt", token);
-  res.status(200).send(JSON.stringify({
-    status: "OK",
-    token: token,
-    user: req.user.firstName,
-    _id: req.user._id
+    // set cookie
+    res.cookie("jwt", token);
+    res.status(200).send(JSON.stringify({
+      status: "OK",
+      token: token,
+      user: req.user.firstName,
+      _id: req.user._id
   }));
 }
 

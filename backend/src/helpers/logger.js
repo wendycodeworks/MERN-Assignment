@@ -6,6 +6,7 @@ class Logger {
   constructor(logLevel, message) {
   this.logLevels = ["mongoose", "request-logger"];
     if (this.logLevels.includes(logLevel)) {
+      // check if log level needs to be split by the delimiter.
       if (logLevel.includes('-')) {
         this.writeToSTDOut(`[${helpers.capitalize(logLevel, '-')}]: ${message}`);
       } else {

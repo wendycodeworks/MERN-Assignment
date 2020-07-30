@@ -4,6 +4,7 @@ import {Redirect} from 'react-dom';
 import 'bulma'
 import UserContext from "../../context/UserContext";
 import DateTimePicker from "react-datetime-picker";
+import Autocomplete from "react-google-autocomplete";
 
 const AddEvent = () => {
 
@@ -21,9 +22,10 @@ const AddEvent = () => {
           title: eventTitle,
           description: eventDescription,
           date: dateTime,
-          location: eventLocation,
           token: userContext.token,
-          owner: userContext._id
+          owner: userContext._id,
+          latitude: eventLocation.geometry.location.lat,
+          longitude: eventLocation.geometry.location.lng
       })
       .then((res) => {
         alert("Great success! Your Techmeet is up!")
@@ -76,34 +78,15 @@ const AddEvent = () => {
 
                     <div className="field">
                       <label className="label">Location</label>
-                      <input
-                        type="text"
-                        className="input"
-                        placeholder="Enter location"
-                        name="location"
-                        value={eventLocation}
-                        onChange={e => setEventLocation(e.target.value)}
+                      <Autocomplete
+                        apiKey={"AIzaSyDMvUjLl8yiltFAdxUHzFVJxW0sGt1rEVI"}
+                        style={{width: '90%'}}
+                        onPlaceSelected={(place) => setEventLocation(place)}
+                        types={['(regions)']}
+                        componentRestrictions={{country: "au"}}
                       />
                     </div>
 
-                    <div class="field">
-                    <label className="label">Event Banner</label>
-                        <label class="file-label">
-                          <input class="file-input" type="file" 
-                          name="banner"
-                          accept="image/*"
-                          value={eventBanner}
-                          onChange={e => setEventBanner(e.target.value)}/>
-                          <span class="file-cta">
-                            <span class="file-icon">
-                              <i class="fa fa-upload"></i>
-                            </span>
-                            <span class="file-label">
-                              Choose a file…
-                            </span>
-                          </span>
-                        </label>
-                      </div>
                       <button className="button is-primary is-fullwidth is-medium is-rounded my-5" onClick={addEvent}>Submit</button>
                       {isCreated && <Redirect to="/" />}
                     </div>

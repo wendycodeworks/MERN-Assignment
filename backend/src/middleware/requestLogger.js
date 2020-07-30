@@ -1,10 +1,8 @@
 const Logger = require("../helpers/logger");
 
+// middleware that logs the contents of the request body.
 const requestLogger = (req, res, next) => {
   let message = "";
-  switch (req.method) {
-    case "GET":
-    case "POST":
       // ternary to check body is an empty object.
       const data =
         Object.keys(req.body).length !== 0
@@ -13,16 +11,6 @@ const requestLogger = (req, res, next) => {
       message =
         `Received ${req.method} request at` + `'${req.originalUrl}'\n` + data;
       new Logger("request-logger", message);
-      break;
-    default:
-      message = `Received ${req.method} request at` + `'${req.originalUrl}'\n`;
-      // append query params to message if they exist.
-      if (Object.keys(req.query).length !== 0) {
-        message += JSON.stringify(req.query, null, 2);
-      }
-      new Logger("request-logger", message);
-      break;
-  }
 
   next();
 };

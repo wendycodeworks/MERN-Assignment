@@ -1,4 +1,5 @@
 module.exports = {
+  // capitalize string with or without a delimiter
   capitalize: (str, delim = null) => {
     if (delim !== null) {
       const newString = str
@@ -13,6 +14,7 @@ module.exports = {
     }
   },
 
+  // returns a UTC string timestamp
   getTimestamp: () => {
     return new Date().toUTCString();
   }
