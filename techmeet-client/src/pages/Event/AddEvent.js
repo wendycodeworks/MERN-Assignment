@@ -26,7 +26,7 @@ const AddEvent = () => {
           owner: userContext._id
       })
       .then((res) => {
-        alert("Great success!")
+        alert("Great success! Your Techmeet is up!")
         console.log(res)
       }) .catch((error) => {
         console.log(error)
@@ -104,7 +104,6 @@ const AddEvent = () => {
                           </span>
                         </label>
                       </div>
-              
                       <button className="button is-primary is-fullwidth is-medium is-rounded my-5" onClick={addEvent}>Submit</button>
                       {isCreated && <Redirect to="/" />}
                     </div>
